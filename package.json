@@ -22,8 +22,6 @@
     "report-coverage": "codeclimate-test-reporter < ./coverage/lcov.info"
   },
   "dependencies": {
-    "axios": "0.18.0",
-    "bluebird": "3.5.3",
     "boom": "7.3.0",
     "bunyan": "1.8.12",
     "config": "3.0.1",
