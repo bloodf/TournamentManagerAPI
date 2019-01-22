@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Matches.associate = (models) => {
     models.Matches.belongsTo(models.Rounds);
-    models.Matches.belongsTo(models.Players, { foreignKey: 'person', targetKey: 'dci' });
   };
 
   return Matches;

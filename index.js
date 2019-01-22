@@ -3,6 +3,7 @@ const config = require('config');
 const server = require('./server');
 const plugins = require('./plugins');
 const logger = require('./server/utils/logger');
+const { sequelize } = require('./server/models');
 
 function gracefulStopServer() {
   // Wait 10 secs for existing connection to close and then exit.
@@ -34,6 +35,9 @@ process.on('SIGTERM', gracefulStopServer);
  */
 async function startServer() {
   try {
+    await sequelize.sync({
+      force: true,
+    });
     // add things here before the app starts, like database connection check etc
     await server.register(plugins);
     await server.start();

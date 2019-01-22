@@ -45,6 +45,17 @@ module.exports = {
       onUpdate: 'CASCADE',
       onDelete: 'SET NULL',
     },
+    userId: {
+      type: Sequelize.INTEGER,
+      unique: 'EventPlayer',
+      references: {
+        model: 'Users',
+        key: 'id',
+      },
+      allowNull: true,
+      onUpdate: 'CASCADE',
+      onDelete: 'SET NULL',
+    },
     teamId: {
       type: Sequelize.INTEGER,
       references: {

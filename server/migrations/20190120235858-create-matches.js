@@ -9,6 +9,12 @@ module.exports = {
     person: {
       type: Sequelize.STRING(30),
       unique: 'EventPlayer',
+      references: {
+        model: 'Players',
+        key: 'dci',
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'SET NULL',
     },
     opponent: {
       type: Sequelize.STRING(30),
@@ -39,15 +45,6 @@ module.exports = {
       onUpdate: 'CASCADE',
       onDelete: 'SET NULL',
       unique: 'EventPlayer',
-    },
-    playerId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'Players',
-        key: 'id',
-      },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
     },
     roundId: {
       type: Sequelize.INTEGER,

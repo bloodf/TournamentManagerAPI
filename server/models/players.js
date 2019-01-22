@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   Players.associate = (models) => {
     models.Players.hasMany(models.Matches, { foreignKey: 'dci', targetKey: 'person' });
     models.Players.belongsTo(models.Events);
+    models.Players.belongsTo(models.Users);
     models.Players.belongsTo(models.Teams);
   };
 
