@@ -1,0 +1,16 @@
+{
+  "app": {
+    "port": "APP_PORT",
+    "apiVersion": "API_VERSION",
+    "name": "APP_NAME",
+    "logLevel": "LOG_LEVEL"
+  },
+  "db": {
+    "name": "DB_NAME",
+    "host": "DB_HOST",
+    "user": "DB_USER",
+    "password": "DB_PASSWORD",
+    "test": "DB_TEST",
+    "dialect": "DB_DIALECT"
+  }
+}

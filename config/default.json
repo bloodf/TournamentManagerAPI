@@ -1,0 +1,16 @@
+{
+  "app": {
+    "port": "3030",
+    "name": "mtg-event-manager",
+    "apiVersion": "v1",
+    "logLevel": "info"
+  },
+  "db": {
+    "name": "mtgEvents",
+    "host": "localhost",
+    "user": "",
+    "password": "",
+    "test": "mtgEventsTest",
+    "dialect": "postgres"
+  }
+}

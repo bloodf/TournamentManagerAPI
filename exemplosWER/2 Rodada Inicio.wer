@@ -1,0 +1,76 @@
+<event sanctionnumber="19-01-13383924" eventguid="f1195bcf-56e9-4720-92ac-fcd14576f2ea" eventtypecode="CAS" orgname="Bazar de Bagdá" coordinator="7205182990" startdate="2019-01-16" postevententry="false" enddate="2001-01-01T00:00:00" format="CSLCONS" eliminationType="3" iscasualreportonly="False" title="Magic Casual Event " isstarted="True" status="7" batchid="" isplayoff="False" manualmatchround="0" notes="" numberofrounds="3" playoffstartround="0">
+  <participation>
+    <person id="59520451" first="Marco" last="Altico" middle="" country="BR" />
+    <person id="4107290037" first="Vinícius" last="Back" middle="" country="BR" />
+    <person id="39803883" first="Felipe" last="Alberto" middle="M" country="BR" />
+    <person id="9210181268" first="Caio" last="Amaral" middle="S" country="BR" />
+    <person id="93075559" first="Felipe" last="Archangelo" middle="A" country="BR" />
+    <person id="3209548416" first="Thomaz" last="Alexandre Coelho" middle="" country="BR" />
+    <person id="8318712323" first="Ahmed" last="Atieh" middle="I" country="BR" />
+    <person id="8102273301" first="Andre" last="Augusto" middle="C" country="BR" />
+    <team id="168" name="Alberto, Felipe" status="2" eliminationround="0">
+      <member position="A" person="39803883" />
+    </team>
+    <team id="169" name="Alexandre Coelho, Thomaz" status="2" eliminationround="0">
+      <member position="A" person="3209548416" />
+    </team>
+    <team id="170" name="Altico, Marco" status="2" eliminationround="0">
+      <member position="A" person="59520451" />
+    </team>
+    <team id="171" name="Amaral, Caio" status="2" eliminationround="0">
+      <member position="A" person="9210181268" />
+    </team>
+    <team id="172" name="Archangelo, Felipe" status="2" eliminationround="0">
+      <member position="A" person="93075559" />
+    </team>
+    <team id="173" name="Atieh, Ahmed" status="2" eliminationround="0">
+      <member position="A" person="8318712323" />
+    </team>
+    <team id="174" name="Back, Vinícius" status="2" eliminationround="0">
+      <member position="A" person="4107290037" />
+    </team>
+    <team id="175" name="Augusto, Andre" status="2" eliminationround="0">
+      <member position="A" person="8102273301" />
+    </team>
+    <role cd="PL" type="PA">
+      <ref person="9210181268" seq="1" />
+      <ref person="3209548416" seq="2" />
+      <ref person="4107290037" seq="3" />
+      <ref person="8102273301" seq="4" />
+      <ref person="59520451" seq="5" />
+      <ref person="8318712323" seq="6" />
+      <ref person="93075559" seq="7" />
+      <ref person="39803883" seq="8" />
+    </role>
+    <role cd="PL" type="DQ" />
+    <role cd="JG" type="PA" />
+  </participation>
+  <matches>
+    <round number="1" PlayFormat="CSLCONS" date="2019-01-16T17:50:58" teamformat="false">
+      <match person="4107290037" opponent="59520451" outcome="1" win="1" loss="0" draw="0" winbydrop="False" />
+      <match person="9210181268" opponent="39803883" outcome="1" win="1" loss="0" draw="0" winbydrop="False" />
+      <match person="3209548416" opponent="93075559" outcome="1" win="1" loss="0" draw="0" winbydrop="False" />
+      <match person="8102273301" opponent="8318712323" outcome="1" win="1" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="2" PlayFormat="CSLCONS" date="2019-01-16T17:51:13" teamformat="false">
+      <match person="8102273301" opponent="3209548416" outcome="2" win="-1" loss="-1" draw="-1" winbydrop="False" />
+      <match person="9210181268" opponent="4107290037" outcome="2" win="-1" loss="-1" draw="-1" winbydrop="False" />
+      <match person="59520451" opponent="8318712323" outcome="2" win="-1" loss="-1" draw="-1" winbydrop="False" />
+      <match person="93075559" opponent="39803883" outcome="2" win="-1" loss="-1" draw="-1" winbydrop="False" />
+    </round>
+  </matches>
+  <seats />
+  <pods>
+    <podround>
+      <round number="1" />
+      <round number="2" />
+    </podround>
+  </pods>
+  <log>
+    <entry date="2019-01-02T21:18:41" operation="CRE">4.5.6.656</entry>
+    <entry date="2019-01-16T17:50:58" operation="ROUND">Round Started 1</entry>
+    <entry date="2019-01-16T17:51:00" operation="MATCH">Matches created using match algorithm for round 1.</entry>
+    <entry date="2019-01-16T17:51:13" operation="ROUND">Round Started 2</entry>
+    <entry date="2019-01-16T17:51:25" operation="MATCH">Matches created using match algorithm for round 2.</entry>
+  </log>
+</event>
