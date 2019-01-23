@@ -8,6 +8,11 @@ module.exports = (sequelize, DataTypes) => {
     position: DataTypes.STRING,
   }, {});
   Players.associate = (models) => {
+    models.Players.hasMany(models.Matches, {
+      as: 'matches',
+      foreignKey: 'playerId',
+      sourceKey: 'id',
+    });
   };
   return Players;
 };

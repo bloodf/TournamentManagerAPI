@@ -13,11 +13,19 @@ async function saveWerData(payload) {
 
     const WerData = {
       ...WerManager.event,
-      rounds: [...WerManager.rounds],
       teams: [...WerManager.teams],
+      rounds: [...WerManager.rounds],
     };
     const WerAssociations = {
       include: [
+        {
+          model: Teams,
+          as: 'teams',
+          include: [{
+            model: Players,
+            as: 'members',
+          }],
+        },
         {
           model: Rounds,
           as: 'rounds',
@@ -30,14 +38,7 @@ async function saveWerData(payload) {
             }],
           }],
         },
-        {
-          model: Teams,
-          as: 'teams',
-          include: [{
-            model: Players,
-            as: 'members',
-          }],
-        }],
+      ],
     };
     const EventFound = await Events.findOne({
       where: {

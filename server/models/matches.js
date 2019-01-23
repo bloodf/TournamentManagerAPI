@@ -9,11 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     winByDrop: DataTypes.BOOLEAN,
   }, {});
   Matches.associate = (models) => {
-    models.Matches.belongsTo(models.Rounds, { as: 'round' });
-    models.Matches.belongsTo(models.Players, {
-      as: 'player',
-      foreignKey: 'playerId',
-    });
+    models.Matches.belongsTo(models.Players, { as: 'player', foreignKey: 'playerId' });
   };
 
   return Matches;
