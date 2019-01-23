@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     eventId: DataTypes.INTEGER,
   }, {});
   DecksEvents.associate = (models) => {
-    models.DecksEvents.belongsTo(models.Users, { foreignKey: 'id' });
-    models.DecksEvents.belongsTo(models.Events, { foreignKey: 'id' });
+    models.DecksEvents.belongsTo(models.Users, { foreignKey: 'id', as: 'user' });
+    models.DecksEvents.belongsTo(models.Events, { foreignKey: 'id', as: 'event' });
   };
   return DecksEvents;
 };

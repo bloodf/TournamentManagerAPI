@@ -14,15 +14,22 @@ module.exports = (sequelize, DataTypes) => {
     playoff: DataTypes.BOOLEAN,
     manualMatches: DataTypes.STRING,
     notes: DataTypes.TEXT,
-    rounds: DataTypes.INTEGER,
+    numberOfRounds: DataTypes.INTEGER,
     playoffsStartRound: DataTypes.INTEGER,
     typeCode: DataTypes.STRING,
   }, {});
   Events.associate = (models) => {
-    models.Events.hasMany(models.Rounds);
-    models.Events.hasMany(models.Teams);
-    models.Events.hasMany(models.Players);
-    models.Events.belongsTo(models.Tournaments);
+    models.Events.hasMany(models.Rounds, {
+      foreignKey: 'eventId',
+      sourceKey: 'id',
+      as: 'rounds',
+    });
+    models.Events.hasMany(models.Teams, {
+      foreignKey: 'eventId',
+      sourceKey: 'id',
+      as: 'teams',
+    });
+    models.Events.belongsTo(models.Tournaments, { as: 'tournament' });
   };
   return Events;
 };

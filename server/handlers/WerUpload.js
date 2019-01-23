@@ -6,15 +6,14 @@ const logger = require('../utils/logger');
 
 async function upload(req) {
   const {
-    eventId,
     file: roundFile,
   } = req.payload;
 
   try {
-    const data = await WerUploadController.saveWerData({ eventId, roundFile });
+    const data = await WerUploadController.saveWerData({ roundFile });
     return data;
   } catch (error) {
-    const errorMessage = `Failed to upload WerReport data for event ${eventId}`;
+    const errorMessage = 'Failed to upload WerReport data for event';
 
     if (!error.logged) logger.error(error, errorMessage);
 

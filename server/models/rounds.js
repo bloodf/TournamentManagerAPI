@@ -6,8 +6,12 @@ module.exports = (sequelize, DataTypes) => {
     teamFormat: DataTypes.BOOLEAN,
   }, {});
   Rounds.associate = (models) => {
-    models.Rounds.hasMany(models.Matches);
-    models.Rounds.belongsTo(models.Events);
+    models.Rounds.hasMany(models.Matches, {
+      as: 'matches',
+      foreignKey: 'roundId',
+      sourceKey: 'id',
+    });
+    models.Rounds.belongsTo(models.Events, { as: 'event' });
   };
   return Rounds;
 };

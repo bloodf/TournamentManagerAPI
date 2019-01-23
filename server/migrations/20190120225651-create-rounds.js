@@ -18,16 +18,6 @@ module.exports = {
     teamFormat: {
       type: Sequelize.BOOLEAN,
     },
-    eventId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'Events',
-        key: 'id',
-      },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
-      unique: 'EventPlayer',
-    },
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE,

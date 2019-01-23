@@ -5,10 +5,11 @@ module.exports = {
       autoIncrement: true,
       primaryKey: true,
       type: Sequelize.INTEGER,
+      unique: 'PlayerMatch',
     },
     person: {
       type: Sequelize.STRING(30),
-      unique: 'EventPlayer',
+      unique: 'PlayerMatch',
       references: {
         model: 'Players',
         key: 'dci',
@@ -20,6 +21,7 @@ module.exports = {
       type: Sequelize.STRING(30),
       default: '',
       allowNull: true,
+      unique: 'PlayerMatch',
     },
     outcome: {
       type: Sequelize.INTEGER,
@@ -35,25 +37,6 @@ module.exports = {
     },
     winByDrop: {
       type: Sequelize.BOOLEAN,
-    },
-    eventId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'Events',
-        key: 'id',
-      },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
-      unique: 'EventPlayer',
-    },
-    roundId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'Rounds',
-        key: 'id',
-      },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
     },
     createdAt: {
       allowNull: false,

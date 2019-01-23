@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   User.associate = (models) => {
     models.Users.belongsToMany(models.Players, {
+      as: 'player',
       through: {
         model: models.UserPlayers,
         unique: false,
@@ -18,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       constraints: false,
     });
     models.Users.belongsToMany(models.Tournaments, {
+      as: 'tournament',
       through: {
         model: models.UsersTournaments,
         unique: true,

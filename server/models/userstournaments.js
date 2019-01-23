@@ -4,9 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     tournamentId: DataTypes.INTEGER,
   }, {});
   UsersTournaments.associate = (models) => {
-    models.UsersTournaments.hasMany(models.Players);
-    models.UsersTournaments.hasMany(models.Tournaments);
-    models.UsersTournaments.belongsTo(models.Roles);
+    models.UsersTournaments.hasMany(models.Players, { as: 'player' });
+    models.UsersTournaments.hasMany(models.Tournaments, { as: 'tournament' });
+    models.UsersTournaments.belongsTo(models.Roles, { as: 'role' });
   };
   return UsersTournaments;
 };

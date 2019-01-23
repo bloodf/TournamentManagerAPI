@@ -48,7 +48,7 @@ module.exports = {
     notes: {
       type: Sequelize.TEXT,
     },
-    rounds: {
+    numberOfRounds: {
       type: Sequelize.INTEGER,
     },
     playoffsStartRound: {
@@ -64,17 +64,6 @@ module.exports = {
     updatedAt: {
       allowNull: false,
       type: Sequelize.DATE,
-    },
-    tournamentId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'Tournaments',
-        key: 'id',
-      },
-      allowNull: true,
-      default: '',
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
     },
   }),
   down: queryInterface => queryInterface.dropTable('Events'),

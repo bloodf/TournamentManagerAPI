@@ -35,36 +35,6 @@ module.exports = {
       allowNull: true,
       defaultValue: '',
     },
-    eventId: {
-      type: Sequelize.INTEGER,
-      unique: 'EventPlayer',
-      references: {
-        model: 'Events',
-        key: 'id',
-      },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
-    },
-    userId: {
-      type: Sequelize.INTEGER,
-      unique: 'EventPlayer',
-      references: {
-        model: 'Users',
-        key: 'id',
-      },
-      allowNull: true,
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
-    },
-    teamId: {
-      type: Sequelize.INTEGER,
-      references: {
-        model: 'Teams',
-        key: 'id',
-      },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
-    },
     createdAt: {
       allowNull: false,
       type: Sequelize.DATE,

@@ -3,10 +3,14 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     status: DataTypes.INTEGER,
     eliminationRound: DataTypes.INTEGER,
+    teamUUID: {
+      type: DataTypes.STRING,
+      unique: true,
+    },
   }, {});
   Teams.associate = (models) => {
-    models.Teams.hasMany(models.Players);
-    models.Teams.belongsTo(models.Events);
+    models.Teams.hasMany(models.Players, { as: 'members', foreignKey: 'teamId' });
+    models.Teams.belongsTo(models.Events, { as: 'event' });
   };
 
   return Teams;

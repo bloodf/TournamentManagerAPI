@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER,
   }, {});
   UserPlayers.associate = (models) => {
-    models.UserPlayers.belongsTo(models.Users);
-    models.UserPlayers.belongsTo(models.Players);
+    models.UserPlayers.belongsTo(models.Users, { as: 'user' });
+    models.UserPlayers.belongsTo(models.Players, { as: 'player' });
   };
   return UserPlayers;
 };
