@@ -20,16 +20,19 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Events.associate = (models) => {
     models.Events.hasMany(models.Rounds, {
-      foreignKey: 'eventId',
-      sourceKey: 'id',
       as: 'rounds',
+      foreignKey: 'roundId',
     });
+
     models.Events.hasMany(models.Teams, {
-      foreignKey: 'eventId',
-      sourceKey: 'id',
       as: 'teams',
+      foreignKey: 'teamId',
     });
-    models.Events.belongsTo(models.Tournaments, { as: 'tournament' });
+
+    models.Events.belongsTo(models.Tournaments, {
+      as: 'tournament',
+      foreignKey: 'tournamentId',
+    });
   };
   return Events;
 };

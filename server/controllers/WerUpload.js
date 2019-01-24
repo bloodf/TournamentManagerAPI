@@ -47,11 +47,15 @@ async function saveWerData(payload) {
       },
       ...WerAssociations,
     });
+    let EventDb;
+
     if (EventFound) {
-      return EventFound.update(WerData, WerAssociations);
+      EventDb = await EventFound.update(WerData, WerAssociations);
+    } else {
+      EventDb = await Events.create(WerData, WerAssociations);
     }
 
-    return Events.create(WerData, WerAssociations);
+    return EventDb;
   } catch (error) {
     logger.error(error, 'Failed to save round for event');
     error.logged = true;

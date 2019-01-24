@@ -8,10 +8,14 @@ module.exports = (sequelize, DataTypes) => {
     position: DataTypes.STRING,
   }, {});
   Players.associate = (models) => {
+    models.Players.belongsToMany(models.Users, {
+      through: 'UserPlayers',
+    });
+    models.Players.belongsTo(models.Decks, { as: 'deck', foreignKey: 'deckId' });
+    models.Players.belongsTo(models.Events, { as: 'event', foreignKey: 'eventId' });
     models.Players.hasMany(models.Matches, {
       as: 'matches',
-      foreignKey: 'playerId',
-      sourceKey: 'id',
+      foreignKey: 'matchId',
     });
   };
   return Players;

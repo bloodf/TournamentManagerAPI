@@ -10,24 +10,17 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   User.associate = (models) => {
     models.Users.belongsToMany(models.Players, {
-      as: 'player',
-      through: {
-        model: models.UserPlayers,
-        unique: false,
-      },
-      foreignKey: 'userId',
-      constraints: false,
+      through: 'UserPlayers',
     });
+
     models.Users.belongsToMany(models.Tournaments, {
-      as: 'tournament',
-      through: {
-        model: models.UsersTournaments,
-        unique: true,
-      },
-      foreignKey: 'userId',
-      constraints: false,
+      through: 'UserTournament',
     });
-    models.Users.belongsTo(models.Roles, { as: 'role' });
+
+    models.Users.belongsTo(models.Roles, {
+      as: 'role',
+      foreignKey: 'roleId',
+    });
   };
   return User;
 };

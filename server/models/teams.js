@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {});
   Teams.associate = (models) => {
-    models.Teams.hasMany(models.Players, { as: 'members', foreignKey: 'teamId' });
-    models.Teams.belongsTo(models.Events, { as: 'event' });
+    models.Teams.hasMany(models.Players, { as: 'members', foreignKey: 'playerId' });
+    models.Teams.belongsTo(models.Events, { as: 'event', foreignKey: 'eventId' });
   };
 
   return Teams;
