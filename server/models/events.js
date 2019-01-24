@@ -19,18 +19,28 @@ module.exports = (sequelize, DataTypes) => {
     typeCode: DataTypes.STRING,
   }, {});
   Events.associate = (models) => {
+
     models.Events.hasMany(models.Rounds, {
       as: 'rounds',
-      foreignKey: 'roundId',
+      targetKey: 'id',
+      foreignKey: 'eventId',
     });
 
     models.Events.hasMany(models.Teams, {
       as: 'teams',
-      foreignKey: 'teamId',
+      targetKey: 'id',
+      foreignKey: 'eventId',
+    });
+
+    models.Events.hasMany(models.Players, {
+      as: 'players',
+      targetKey: 'id',
+      foreignKey: 'eventId',
     });
 
     models.Events.belongsTo(models.Tournaments, {
       as: 'tournament',
+      targetKey: 'id',
       foreignKey: 'tournamentId',
     });
   };

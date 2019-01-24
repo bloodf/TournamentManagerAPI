@@ -17,8 +17,15 @@ module.exports = (sequelize, DataTypes) => {
       through: 'UserTournament',
     });
 
+    models.Users.hasMany(models.Decks, {
+      as: 'deck',
+      targetKey: 'id',
+      foreignKey: 'userId',
+    });
+
     models.Users.belongsTo(models.Roles, {
       as: 'role',
+      targetKey: 'id',
       foreignKey: 'roleId',
     });
   };

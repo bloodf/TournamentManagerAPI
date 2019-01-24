@@ -6,12 +6,15 @@ module.exports = (sequelize, DataTypes) => {
     active: DataTypes.BOOLEAN,
   }, {});
   Tournament.associate = (models) => {
-    models.Tournaments.hasMany(models.Events, {
-      as: 'event',
-      foreignKey: 'eventId',
-    });
+
     models.Tournaments.belongsToMany(models.Users, {
       through: 'UserTournament',
+    });
+
+    models.Tournaments.hasMany(models.Events, {
+      as: 'event',
+      targetKey: 'id',
+      foreignKey: 'tournamentId',
     });
   };
   return Tournament;

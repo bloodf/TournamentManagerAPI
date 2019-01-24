@@ -16,6 +16,7 @@ async function saveWerData(payload) {
       teams: [...WerManager.teams],
       rounds: [...WerManager.rounds],
     };
+
     const WerAssociations = {
       include: [
         {
@@ -40,6 +41,7 @@ async function saveWerData(payload) {
         },
       ],
     };
+
     const EventFound = await Events.findOne({
       where: {
         sanctionNumber: WerData.sanctionNumber,
@@ -47,6 +49,7 @@ async function saveWerData(payload) {
       },
       ...WerAssociations,
     });
+
     let EventDb;
 
     if (EventFound) {
@@ -54,6 +57,8 @@ async function saveWerData(payload) {
     } else {
       EventDb = await Events.create(WerData, WerAssociations);
     }
+
+    // const Teams = await EventDb.getTeams();
 
     return EventDb;
   } catch (error) {

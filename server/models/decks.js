@@ -6,7 +6,17 @@ module.exports = (sequelize, DataTypes) => {
     format: DataTypes.STRING,
   }, {});
   Decks.associate = (models) => {
-    models.Decks.belongsTo(models.Users, { as: 'user', foreignKey: 'userId' });
+    models.Decks.hasMany(models.Players, {
+      as: 'player',
+      targetKey: 'id',
+      foreignKey: 'deckId',
+    });
+
+    models.Decks.belongsTo(models.Users, {
+      as: 'user',
+      targetKey: 'id',
+      foreignKey: 'userId',
+    });
   };
   return Decks;
 };

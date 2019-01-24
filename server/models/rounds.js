@@ -8,10 +8,15 @@ module.exports = (sequelize, DataTypes) => {
   Rounds.associate = (models) => {
     models.Rounds.hasMany(models.Matches, {
       as: 'matches',
-      foreignKey: 'matchId',
+      targetKey: 'id',
+      foreignKey: 'roundId',
     });
 
-    models.Rounds.belongsTo(models.Events, { as: 'event', foreignKey: 'eventId' });
+    models.Rounds.belongsTo(models.Events, {
+      as: 'event',
+      targetKey: 'id',
+      foreignKey: 'eventId',
+    });
   };
   return Rounds;
 };
