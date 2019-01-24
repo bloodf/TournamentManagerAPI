@@ -5,6 +5,12 @@ const {
 const WerManagerClass = require('../utils/werManager');
 const logger = require('../utils/logger');
 
+async function saveTeamPlayers(EventDb, TeamsDb) {
+  const TeamPlayers = await TeamsDb.getMembers();
+  await EventDb.addPlayers(TeamPlayers);
+  return TeamPlayers;
+}
+
 async function saveWerData(payload) {
   const { roundFile } = payload;
   try {
@@ -57,8 +63,9 @@ async function saveWerData(payload) {
     } else {
       EventDb = await Events.create(WerData, WerAssociations);
     }
+    const TeamsDb = await EventDb.getTeams();
 
-    // const Teams = await EventDb.getTeams();
+    await saveTeamPlayers(EventDb, await TeamsDb.map(team => team.getMembers()));
 
     return EventDb;
   } catch (error) {
