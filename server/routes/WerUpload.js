@@ -4,7 +4,7 @@ const WerValidations = require('../validations/WerUpload');
 
 const routes = [];
 
-// GET /eventRounds
+// POST /werUpload
 routes.push({
   path: `${API_PATH}/werUpload`,
   method: 'POST',
