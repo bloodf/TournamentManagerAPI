@@ -1,12 +1,12 @@
 const {
-  Events, Players, Rounds, Matches, Teams,
+  Events, Players, Rounds, Matches, Teams, Tournaments,
 } = require('../models');
 
 const WerManagerClass = require('../utils/werManager');
 const logger = require('../utils/logger');
 
 async function saveWerData(payload) {
-  const { roundFile } = payload;
+  const { roundFile, tournamentId } = payload;
   try {
     const WerManager = new WerManagerClass();
     await WerManager.parse(roundFile._data);
@@ -58,13 +58,54 @@ async function saveWerData(payload) {
       EventDb = await Events.create(WerData, WerAssociations);
     }
 
+    const TournamentDB = await Tournaments.findById(tournamentId);
+
+    await TournamentDB.addEvent(EventDb);
+
     const TeamsDb = await EventDb.getTeams();
 
-    const TeamPlayers = await Promise.all(await TeamsDb.map(async team => team.getMembers()));
+    const TeamPlayersDb = [...await Promise.all(
+      await TeamsDb
+        .map(async team => team.getMembers()),
+    )];
 
-    const EventPlayers = await Promise.all(await TeamPlayers.map(async teamPlayer => EventDb.addPlayers(teamPlayer)));
+    const EventPlayersDb = [...await Promise.all(
+      await TeamPlayersDb
+        .map(async (teamPlayer) => {
+          EventDb.addPlayers(teamPlayer);
+          return teamPlayer;
+        }),
+    )]
+      .flat();
 
-    return EventDb;
+    // const MatchesDb =
+    [...await Promise.all(
+      await EventDb
+        .getRounds()
+        .map(async round => round.getMatches()),
+    )]
+      .flat()
+      .map(async (match) => {
+        const MatchPlayer = EventPlayersDb.find(player => player.dci === match.person);
+        const OpponentMatch = EventPlayersDb.find(player => player.dci === match.opponent);
+
+        if (MatchPlayer) await MatchPlayer.addMatch(match);
+
+        if (OpponentMatch) await OpponentMatch.addOpponentMatch(match);
+
+        return match;
+      });
+
+    return await Events.findById(EventDb.id,
+      {
+        include: [
+          ...WerAssociations.include,
+          {
+            model: Players,
+            as: 'players',
+          },
+        ],
+      });
   } catch (error) {
     logger.error(error, 'Failed to save round for event');
     error.logged = true;

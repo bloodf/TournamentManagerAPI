@@ -13,12 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       through: 'UserPlayers',
     });
 
-    models.Players.belongsTo(models.Decks, {
-      as: 'deck',
-      targetKey: 'id',
-      foreignKey: 'deckId',
-    });
-
     models.Players.belongsTo(models.Teams, {
       as: 'team',
       targetKey: 'id',
@@ -35,6 +29,12 @@ module.exports = (sequelize, DataTypes) => {
       as: 'match',
       targetKey: 'id',
       foreignKey: 'playerId',
+    });
+
+    models.Players.hasMany(models.Matches, {
+      as: 'opponentMatch',
+      targetKey: 'id',
+      foreignKey: 'opponentId',
     });
   };
   return Players;

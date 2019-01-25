@@ -36,7 +36,7 @@ process.on('SIGTERM', gracefulStopServer);
 async function startServer() {
   try {
     await sequelize.sync({
-      force: true,
+      force: false,
     });
     // add things here before the app starts, like database connection check etc
     await server.register(plugins);

@@ -16,6 +16,12 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'playerId',
     });
 
+    models.Matches.belongsTo(models.Players, {
+      as: 'opponentPlayer',
+      targetKey: 'id',
+      foreignKey: 'opponentId',
+    });
+
     models.Matches.belongsTo(models.Rounds, {
       as: 'round',
       targetKey: 'id',

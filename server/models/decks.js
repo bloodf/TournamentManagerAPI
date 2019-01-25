@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'deckId',
     });
 
+    models.Decks.belongsToMany(models.Events, {
+      through: 'DeckEvent',
+    });
+
     models.Decks.belongsTo(models.Users, {
       as: 'user',
       targetKey: 'id',
