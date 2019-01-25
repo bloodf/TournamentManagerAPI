@@ -1,0 +1,216 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-01-25T02:36:52.318Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_247bf15fc2534f2cb7696afad2bc9acd",
+			"created": 1547768377036,
+			"description": "",
+			"modified": 1547768377036,
+			"name": "Magic Event Manager",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_e87667b0fde64170b27c6c47339ef02c",
+			"color": null,
+			"created": 1547768377055,
+			"data": {},
+			"isPrivate": false,
+			"metaSortKey": 1547768377055,
+			"modified": 1547768377055,
+			"name": "New Environment",
+			"parentId": "wrk_247bf15fc2534f2cb7696afad2bc9acd",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_16e6923f39e04124acf02708388f7b57",
+			"cookies": [],
+			"created": 1547768377057,
+			"modified": 1547768377057,
+			"name": "Default Jar",
+			"parentId": "wrk_247bf15fc2534f2cb7696afad2bc9acd",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_841e2d34953b4644b2b9be05956b6187",
+			"created": 1548383718992,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1548383718992,
+			"modified": 1548383718992,
+			"name": "Player",
+			"parentId": "wrk_247bf15fc2534f2cb7696afad2bc9acd",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_dd801c5b91a04b769a5f1244d3e4d291",
+			"created": 1548383741463,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1548383741463,
+			"modified": 1548383741463,
+			"name": "WerManager",
+			"parentId": "wrk_247bf15fc2534f2cb7696afad2bc9acd",
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_2fa15c09379e4668a433b22c1b0db375",
+			"color": "#7d69cb",
+			"created": 1547768436443,
+			"data": {
+				"baseURL": "http://localhost:3030/mtg-event-manager/api/v1"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1547768436443,
+			"modified": 1547770194868,
+			"name": "Desenvolvimento",
+			"parentId": "env_e87667b0fde64170b27c6c47339ef02c",
+			"_type": "environment"
+		},
+		{
+			"_id": "req_1b84f84dce09437e954b293ab0b6f59c",
+			"authentication": {},
+			"body": {},
+			"created": 1547768391387,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1547768391487,
+			"method": "GET",
+			"modified": 1548383764404,
+			"name": "Get Player",
+			"parameters": [
+				{
+					"id": "pair_b6786f6843f9478594e5e45283c63a58",
+					"name": "id",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_841e2d34953b4644b2b9be05956b6187",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/player",
+			"_type": "request"
+		},
+		{
+			"_id": "req_fa0174b4dc144f97a628ccf27cdbc24b",
+			"authentication": {},
+			"body": {},
+			"created": 1548383693234,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1547768391437,
+			"method": "GET",
+			"modified": 1548383771050,
+			"name": "Get Event Players",
+			"parameters": [
+				{
+					"id": "pair_b6786f6843f9478594e5e45283c63a58",
+					"name": "id",
+					"value": "1"
+				},
+				{
+					"id": "pair_82f8de8b894c4738a64c5427e1fe0df3",
+					"name": "round",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_841e2d34953b4644b2b9be05956b6187",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/eventPlayers",
+			"_type": "request"
+		},
+		{
+			"_id": "req_2dbb04a9b84d498c9ef1256c9923f39d",
+			"authentication": {},
+			"body": {},
+			"created": 1548383694951,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1547768391412,
+			"method": "GET",
+			"modified": 1548383776776,
+			"name": "Get Tournament Players",
+			"parameters": [
+				{
+					"id": "pair_b6786f6843f9478594e5e45283c63a58",
+					"name": "id",
+					"value": "1"
+				},
+				{
+					"id": "pair_82f8de8b894c4738a64c5427e1fe0df3",
+					"name": "round",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_841e2d34953b4644b2b9be05956b6187",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/tournamentPlayers",
+			"_type": "request"
+		},
+		{
+			"_id": "req_0936603efaa94d04a3cd1ebc8a3f84a1",
+			"authentication": {},
+			"body": {
+				"mimeType": "multipart/form-data",
+				"params": [
+					{
+						"fileName": "/Users/heitor/Versionamento/TournamentManager/exemplosWER/3 Rodada Inico.wer",
+						"id": "pair_22d40cd45a664e888fd34499eece6cbf",
+						"name": "file",
+						"type": "file",
+						"value": ""
+					},
+					{
+						"id": "pair_d105ded927de43b4b24d917a2ac3da50",
+						"name": "tournamentId",
+						"value": "1"
+					}
+				]
+			},
+			"created": 1547770666365,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_2d5f1cd784554c4bafa899806942ca7f",
+					"name": "Content-Type",
+					"value": "multipart/form-data"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1548383730227.5,
+			"method": "POST",
+			"modified": 1548383749140,
+			"name": "Save Wer File",
+			"parameters": [],
+			"parentId": "fld_dd801c5b91a04b769a5f1244d3e4d291",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/werUpload",
+			"_type": "request"
+		}
+	]
+}
