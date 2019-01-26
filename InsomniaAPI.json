@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2019-01-25T02:36:52.318Z",
+	"__export_date": "2019-01-26T01:27:17.220Z",
 	"__export_source": "insomnia.desktop.app:v6.3.2",
 	"resources": [
 		{
@@ -57,6 +57,28 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "fld_f3d32b42ad724a31a75bed104a074b73",
+			"created": 1548464058176,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1545604459117.5,
+			"modified": 1548464065039,
+			"name": "Event",
+			"parentId": "wrk_247bf15fc2534f2cb7696afad2bc9acd",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_8095e1c50c264529947250487fb49a9c",
+			"created": 1548465326260,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1544214829180.25,
+			"modified": 1548465332357,
+			"name": "Rounds",
+			"parentId": "wrk_247bf15fc2534f2cb7696afad2bc9acd",
+			"_type": "request_group"
+		},
+		{
 			"_id": "env_2fa15c09379e4668a433b22c1b0db375",
 			"color": "#7d69cb",
 			"created": 1547768436443,
@@ -80,12 +102,12 @@
 			"isPrivate": false,
 			"metaSortKey": -1547768391487,
 			"method": "GET",
-			"modified": 1548383764404,
-			"name": "Get Player",
+			"modified": 1548464190188,
+			"name": "Player",
 			"parameters": [
 				{
 					"id": "pair_b6786f6843f9478594e5e45283c63a58",
-					"name": "id",
+					"name": "playerId",
 					"value": "1"
 				}
 			],
@@ -97,74 +119,6 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "{{ baseURL  }}/player",
-			"_type": "request"
-		},
-		{
-			"_id": "req_fa0174b4dc144f97a628ccf27cdbc24b",
-			"authentication": {},
-			"body": {},
-			"created": 1548383693234,
-			"description": "",
-			"headers": [],
-			"isPrivate": false,
-			"metaSortKey": -1547768391437,
-			"method": "GET",
-			"modified": 1548383771050,
-			"name": "Get Event Players",
-			"parameters": [
-				{
-					"id": "pair_b6786f6843f9478594e5e45283c63a58",
-					"name": "id",
-					"value": "1"
-				},
-				{
-					"id": "pair_82f8de8b894c4738a64c5427e1fe0df3",
-					"name": "round",
-					"value": "1"
-				}
-			],
-			"parentId": "fld_841e2d34953b4644b2b9be05956b6187",
-			"settingDisableRenderRequestBody": false,
-			"settingEncodeUrl": true,
-			"settingMaxTimelineDataSize": 1000,
-			"settingRebuildPath": true,
-			"settingSendCookies": true,
-			"settingStoreCookies": true,
-			"url": "{{ baseURL  }}/eventPlayers",
-			"_type": "request"
-		},
-		{
-			"_id": "req_2dbb04a9b84d498c9ef1256c9923f39d",
-			"authentication": {},
-			"body": {},
-			"created": 1548383694951,
-			"description": "",
-			"headers": [],
-			"isPrivate": false,
-			"metaSortKey": -1547768391412,
-			"method": "GET",
-			"modified": 1548383776776,
-			"name": "Get Tournament Players",
-			"parameters": [
-				{
-					"id": "pair_b6786f6843f9478594e5e45283c63a58",
-					"name": "id",
-					"value": "1"
-				},
-				{
-					"id": "pair_82f8de8b894c4738a64c5427e1fe0df3",
-					"name": "round",
-					"value": "1"
-				}
-			],
-			"parentId": "fld_841e2d34953b4644b2b9be05956b6187",
-			"settingDisableRenderRequestBody": false,
-			"settingEncodeUrl": true,
-			"settingMaxTimelineDataSize": 1000,
-			"settingRebuildPath": true,
-			"settingSendCookies": true,
-			"settingStoreCookies": true,
-			"url": "{{ baseURL  }}/tournamentPlayers",
 			"_type": "request"
 		},
 		{
@@ -210,6 +164,238 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "{{ baseURL  }}/werUpload",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1c0b3fb99f9440adb941de5bf7175b99",
+			"authentication": {},
+			"body": {},
+			"created": 1548464058179,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1547768391487,
+			"method": "GET",
+			"modified": 1548464167068,
+			"name": "Event",
+			"parameters": [
+				{
+					"id": "pair_b6786f6843f9478594e5e45283c63a58",
+					"name": "eventId",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_f3d32b42ad724a31a75bed104a074b73",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/event",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6bf6bac42a3c4be2b4265d794b20950c",
+			"authentication": {},
+			"body": {},
+			"created": 1548464058181,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1547768391437,
+			"method": "GET",
+			"modified": 1548464169509,
+			"name": "Players",
+			"parameters": [
+				{
+					"id": "pair_82f8de8b894c4738a64c5427e1fe0df3",
+					"name": "eventId",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_f3d32b42ad724a31a75bed104a074b73",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/eventPlayers",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f3d58597effb4ae0b40f1f4f2cd1ec3f",
+			"authentication": {},
+			"body": {},
+			"created": 1548464058183,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1547768391412,
+			"method": "GET",
+			"modified": 1548464180253,
+			"name": "Rounds",
+			"parameters": [
+				{
+					"id": "pair_82f8de8b894c4738a64c5427e1fe0df3",
+					"name": "eventId",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_f3d32b42ad724a31a75bed104a074b73",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/eventRounds",
+			"_type": "request"
+		},
+		{
+			"_id": "req_52dc0b48e3424664acf874940ad167a7",
+			"authentication": {},
+			"body": {},
+			"created": 1548464088750,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1546295019158,
+			"method": "GET",
+			"modified": 1548464186181,
+			"name": "Matches",
+			"parameters": [
+				{
+					"id": "pair_82f8de8b894c4738a64c5427e1fe0df3",
+					"name": "eventId",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_f3d32b42ad724a31a75bed104a074b73",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/eventMatches",
+			"_type": "request"
+		},
+		{
+			"_id": "req_743f29cb506b4d62a2ad884d664d91f5",
+			"authentication": {},
+			"body": {},
+			"created": 1548464119888,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1547768391424.5,
+			"method": "GET",
+			"modified": 1548464173373,
+			"name": "Teams",
+			"parameters": [
+				{
+					"id": "pair_82f8de8b894c4738a64c5427e1fe0df3",
+					"name": "eventId",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_f3d32b42ad724a31a75bed104a074b73",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/eventTeams",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8a23f10215a74bc5a133114afc2d7af5",
+			"authentication": {},
+			"body": {},
+			"created": 1548465326262,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1547768391487,
+			"method": "GET",
+			"modified": 1548465352661,
+			"name": "Round",
+			"parameters": [
+				{
+					"id": "pair_b6786f6843f9478594e5e45283c63a58",
+					"name": "roundId",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_8095e1c50c264529947250487fb49a9c",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/round",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f0ae7e49ae104b03a801a0fe1f0aedb1",
+			"authentication": {},
+			"body": {},
+			"created": 1548465326267,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1547768391437,
+			"method": "GET",
+			"modified": 1548465359026,
+			"name": "Players",
+			"parameters": [
+				{
+					"id": "pair_82f8de8b894c4738a64c5427e1fe0df3",
+					"name": "roundId",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_8095e1c50c264529947250487fb49a9c",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/roundPlayers",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b02cbb82f5d745a88e1ca3e4a86b28eb",
+			"authentication": {},
+			"body": {},
+			"created": 1548465326270,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1546295019158,
+			"method": "GET",
+			"modified": 1548465364088,
+			"name": "Matches",
+			"parameters": [
+				{
+					"id": "pair_82f8de8b894c4738a64c5427e1fe0df3",
+					"name": "roundId",
+					"value": "1"
+				}
+			],
+			"parentId": "fld_8095e1c50c264529947250487fb49a9c",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/roundMatches",
 			"_type": "request"
 		}
 	]
