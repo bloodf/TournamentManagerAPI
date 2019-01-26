@@ -1,4 +1,5 @@
 const XML2JS = require('xml2js');
+const uuidv4 = require('uuid/v4');
 
 class WerManager {
   constructor() {
@@ -49,15 +50,9 @@ class WerManager {
     this._players = [...this.players, ...value.map(p => p.$)];
   }
 
-  getTeamUUID(team) {
-    return Buffer
-      .from(`${team.name}-${this._event.sanctionnumber}-${this._event.eventguid}`.replace(/([^a-zA-Z0-9]||[\u00A0-\u2666])/g, ''))
-      .toString('base64');
-  }
-
   get teams() {
     return this._teams.map(team => ({
-      teamUUID: this.getTeamUUID(team),
+      teamUUID: uuidv4(),
       name: team.name,
       status: team.status,
       eliminationRound: team.eliminationround,

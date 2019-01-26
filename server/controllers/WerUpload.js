@@ -1,5 +1,5 @@
 const {
-  Events, Players, Rounds, Matches, Teams, Tournaments,
+  Events, Players, Rounds, Matches, Teams, Tournaments, Users,
 } = require('../models');
 
 const WerManagerClass = require('../utils/werManager');
@@ -67,7 +67,7 @@ async function saveWerData(payload) {
     const TeamPlayersDb = [...await Promise.all(
       await TeamsDb
         .map(async team => team.getMembers()),
-    )];
+    )].flat();
 
     const EventPlayersDb = [...await Promise.all(
       await TeamPlayersDb
@@ -77,6 +77,20 @@ async function saveWerData(payload) {
         }),
     )]
       .flat();
+
+    await Promise.all(
+      await TeamPlayersDb
+        .map(async (player) => {
+          const UserDb = await Users.find({
+            where: {
+              dci: player.dci,
+            },
+          });
+          if (UserDb) {
+            UserDb.addPlayer(player);
+          }
+        }),
+    );
 
     // const MatchesDb =
     [...await Promise.all(
