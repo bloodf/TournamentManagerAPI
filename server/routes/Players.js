@@ -15,27 +15,4 @@ routes.push({
   },
 });
 
-// GET /eventPlayers
-routes.push({
-  path: `${API_PATH}/eventPlayers`,
-  method: 'GET',
-  handler: PlayersHandler.eventPlayers,
-  options: {
-    tags: ['api', 'eventPlayers', 'GET'],
-    validate: PlayersValidations.eventPlayers,
-  },
-});
-
-
-// GET /tournamentPlayers
-routes.push({
-  path: `${API_PATH}/tournamentPlayers`,
-  method: 'GET',
-  handler: PlayersHandler.tournamentPlayers,
-  options: {
-    tags: ['api', 'tournamentPlayers', 'GET'],
-    validate: PlayersValidations.tournamentPlayers,
-  },
-});
-
 module.exports = routes;
