@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
   const Decks = sequelize.define('Decks', {
     userId: DataTypes.INTEGER,
     name: DataTypes.STRING,
-    list: DataTypes.TEXT,
+    list: DataTypes.JSON,
     format: DataTypes.STRING,
   }, {});
   Decks.associate = (models) => {

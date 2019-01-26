@@ -10,7 +10,7 @@ module.exports = {
       type: Sequelize.STRING,
     },
     list: {
-      type: Sequelize.TEXT,
+      type: Sequelize.JSON,
     },
     format: {
       type: Sequelize.STRING,

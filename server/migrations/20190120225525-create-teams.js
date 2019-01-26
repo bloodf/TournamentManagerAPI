@@ -16,7 +16,7 @@ module.exports = {
       type: Sequelize.INTEGER,
     },
     teamUUID: {
-      type: Sequelize.STRING,
+      type: Sequelize.UUID,
       unique: true,
     },
     createdAt: {

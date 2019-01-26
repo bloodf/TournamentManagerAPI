@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     status: DataTypes.INTEGER,
     eliminationRound: DataTypes.INTEGER,
     teamUUID: {
-      type: DataTypes.STRING,
+      type: DataTypes.UUID,
       unique: true,
     },
   }, {});
