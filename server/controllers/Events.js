@@ -8,7 +8,7 @@ async function getEvent(eventId) {
   try {
     return Events.findById(eventId);
   } catch (error) {
-    logger.error(error, 'Failed to save round for event');
+    logger.error(error, 'Failed to get event');
     error.logged = true;
     throw error;
   }
@@ -19,7 +19,7 @@ async function getEventPlayers(eventId) {
     const EventDb = await Events.findById(eventId);
     return EventDb.getPlayers();
   } catch (error) {
-    logger.error(error, 'Failed to save round for event');
+    logger.error(error, 'Failed to get event players');
     error.logged = true;
     throw error;
   }
@@ -44,7 +44,7 @@ async function getEventTeams(eventId) {
     });
     return EventDB.teams;
   } catch (error) {
-    logger.error(error, 'Failed to save round for event');
+    logger.error(error, 'Failed to get event teams');
     error.logged = true;
     throw error;
   }
@@ -73,7 +73,7 @@ async function getEventRounds(eventId) {
     });
     return EventDb.rounds;
   } catch (error) {
-    logger.error(error, 'Failed to save round for event');
+    logger.error(error, 'Failed to get event rounds');
     error.logged = true;
     throw error;
   }
@@ -84,7 +84,7 @@ async function getEventMatches(eventId) {
     const EventDb = await getEventRounds(eventId);
     return EventDb.map(round => round.matches).flat();
   } catch (error) {
-    logger.error(error, 'Failed to save round for event');
+    logger.error(error, 'Failed to get event matches');
     error.logged = true;
     throw error;
   }
