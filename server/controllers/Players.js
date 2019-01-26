@@ -8,7 +8,7 @@ async function getPlayer(playerId) {
   try {
     return Players.findById(playerId);
   } catch (error) {
-    logger.error(error, 'Failed to save round for event');
+    logger.error(error, 'Failed to get player');
     error.logged = true;
     throw error;
   }
