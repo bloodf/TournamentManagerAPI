@@ -25,6 +25,12 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'eventId',
     });
 
+    models.Players.belongsTo(models.Users, {
+      as: 'user',
+      targetKey: 'id',
+      foreignKey: 'userId',
+    });
+
     models.Players.hasMany(models.Matches, {
       as: 'match',
       targetKey: 'id',

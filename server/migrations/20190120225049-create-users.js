@@ -23,9 +23,11 @@ module.exports = {
     },
     deviceId: {
       type: Sequelize.STRING,
+      allowNull: true,
     },
     facebookId: {
       type: Sequelize.STRING,
+      allowNull: true,
     },
     createdAt: {
       allowNull: false,

@@ -9,8 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     active: DataTypes.BOOLEAN,
   }, {});
   User.associate = (models) => {
-    models.Users.belongsToMany(models.Players, {
-      through: 'UserPlayers',
+    models.Users.hasMany(models.Players, {
+      as: 'player',
+      targetKey: 'id',
+      foreignKey: 'userId',
     });
 
     models.Users.belongsToMany(models.Tournaments, {
