@@ -6,11 +6,11 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
-    role: {
+    name: {
       type: Sequelize.STRING,
     },
-    active: {
-      type: Sequelize.BOOLEAN,
+    role: {
+      type: Sequelize.STRING,
     },
     createdAt: {
       allowNull: false,

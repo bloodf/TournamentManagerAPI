@@ -1,6 +1,7 @@
 const { API_PATH } = require('../utils');
 const RoundsHandler = require('../handlers/Rounds');
 const RoundsValidations = require('../validations/Rounds');
+const ACLRoles = require('../authentication/aclRoles');
 
 const routes = [];
 
@@ -23,6 +24,11 @@ routes.push({
   options: {
     tags: ['api', 'roundPlayers', 'GET'],
     validate: RoundsValidations,
+    plugins: {
+      hapiAclAuth: {
+        roles: ACLRoles('player'),
+      },
+    },
   },
 });
 
@@ -34,6 +40,11 @@ routes.push({
   options: {
     tags: ['api', 'roundMatches', 'GET'],
     validate: RoundsValidations,
+    plugins: {
+      hapiAclAuth: {
+        roles: ACLRoles('player'),
+      },
+    },
   },
 });
 

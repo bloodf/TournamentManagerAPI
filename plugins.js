@@ -1,13 +1,17 @@
-const Inert = require('inert');
-const Vision = require('vision');
-const HapiSwagger = require('hapi-swagger');
-const Good = require('good');
 const config = require('config');
 
+const Acl = require('./server/authentication/acl');
 const Package = require('./package.json');
 
 const DEVELOPMENT = 'development';
 
-const plugins = [];
+const ACLAUTH = {
+  plugin: require('hapi-acl-auth'),
+  options: {
+    handler: Acl.handler,
+  },
+};
+
+const plugins = [ACLAUTH];
 
 module.exports = plugins;

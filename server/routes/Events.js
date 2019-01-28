@@ -2,6 +2,8 @@ const { API_PATH } = require('../utils');
 const EventsHandler = require('../handlers/Events');
 const EventsValidations = require('../validations/Events');
 
+const ACLRoles = require('../authentication/aclRoles');
+
 const routes = [];
 
 // GET /event
@@ -12,6 +14,11 @@ routes.push({
   options: {
     tags: ['api', 'player', 'GET'],
     validate: EventsValidations.event,
+    plugins: {
+      hapiAclAuth: {
+        roles: ACLRoles('player'),
+      },
+    },
   },
 });
 
@@ -23,6 +30,11 @@ routes.push({
   options: {
     tags: ['api', 'eventPlayers', 'GET'],
     validate: EventsValidations.event,
+    plugins: {
+      hapiAclAuth: {
+        roles: ACLRoles('player'),
+      },
+    },
   },
 });
 
@@ -34,6 +46,11 @@ routes.push({
   options: {
     tags: ['api', 'eventTeams', 'GET'],
     validate: EventsValidations.event,
+    plugins: {
+      hapiAclAuth: {
+        roles: ACLRoles('player'),
+      },
+    },
   },
 });
 
@@ -45,6 +62,11 @@ routes.push({
   options: {
     tags: ['api', 'eventTeams', 'GET'],
     validate: EventsValidations.event,
+    plugins: {
+      hapiAclAuth: {
+        roles: ACLRoles('player'),
+      },
+    },
   },
 });
 
@@ -56,6 +78,11 @@ routes.push({
   options: {
     tags: ['api', 'eventTeams', 'GET'],
     validate: EventsValidations.event,
+    plugins: {
+      hapiAclAuth: {
+        roles: ACLRoles('player'),
+      },
+    },
   },
 });
 

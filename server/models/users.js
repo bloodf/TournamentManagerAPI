@@ -8,7 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     facebookId: DataTypes.STRING,
     active: DataTypes.BOOLEAN,
   }, {});
+
   User.associate = (models) => {
+
     models.Users.hasMany(models.Players, {
       as: 'player',
       targetKey: 'id',
@@ -16,7 +18,11 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     models.Users.belongsToMany(models.Tournaments, {
-      through: 'UserTournament',
+      through: 'TournamentUser',
+    });
+
+    models.Users.belongsToMany(models.Roles, {
+      through: 'UserRole',
     });
 
     models.Users.hasMany(models.Decks, {
@@ -25,11 +31,6 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId',
     });
 
-    models.Users.belongsTo(models.Roles, {
-      as: 'role',
-      targetKey: 'id',
-      foreignKey: 'roleId',
-    });
   };
   return User;
 };
