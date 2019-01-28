@@ -1,7 +1,7 @@
 const Roles = [
   {
     name: 'Super User',
-    role: 'superUser',
+    role: 'superuser',
     group: ['superuser'],
   },
   {

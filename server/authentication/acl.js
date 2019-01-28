@@ -1,10 +1,11 @@
+/*eslint-disable */
 const {
-  Events, Teams, Players, Rounds, Matches,
+  Users, UserRole,
 } = require('../models');
 
-async function handler(...args) {
+async function handler(request) {
   // console.log(args);
-  return { user: 'cread', roles: ['superuser'] };
+  return request.auth.credentials;
 }
 
 module.exports = {
