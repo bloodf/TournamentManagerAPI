@@ -22,6 +22,7 @@
     "report-coverage": "codeclimate-test-reporter < ./coverage/lcov.info"
   },
   "dependencies": {
+    "bcrypt": "^3.0.3",
     "boom": "7.3.0",
     "bunyan": "1.8.12",
     "config": "3.0.1",
