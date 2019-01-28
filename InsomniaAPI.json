@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2019-01-26T01:27:17.220Z",
+	"__export_date": "2019-01-28T21:43:59.858Z",
 	"__export_source": "insomnia.desktop.app:v6.3.2",
 	"resources": [
 		{
@@ -79,22 +79,60 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "req_e363367ca4df4f7594e8316b46cf9b45",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": " {\n\t\"email\": \"{{ baseEmail  }}\",\n\t\"password\": \"{{ basePassword  }}\"\n }"
+			},
+			"created": 1548706382185,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_2d969da2c29a4dff8216c5afbec46d19",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1548706382185,
+			"method": "POST",
+			"modified": 1548706604165,
+			"name": "Get Token",
+			"parameters": [],
+			"parentId": "wrk_247bf15fc2534f2cb7696afad2bc9acd",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseURL  }}/getToken",
+			"_type": "request"
+		},
+		{
 			"_id": "env_2fa15c09379e4668a433b22c1b0db375",
 			"color": "#7d69cb",
 			"created": 1547768436443,
 			"data": {
+				"baseEmail": "heitor.ramon@gmail.com",
+				"basePassword": "heitor",
+				"baseToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkhlaXRvciBSYW1vbiBSaWJlaXJvIiwiZW1haWwiOiJoZWl0b3IucmFtb25AZ21haWwuY29tIiwiaXNBY3RpdmUiOnRydWUsInJvbGVzIjpbInN1cGVyVXNlciJdLCJpYXQiOjE1NDg3MTE2NDF9.CDnUdoniaHWtzmX5QaznfCAP4d9Yf8BrG1alWSY34aM",
 				"baseURL": "http://localhost:3030/mtg-event-manager/api/v1"
 			},
 			"isPrivate": false,
 			"metaSortKey": 1547768436443,
-			"modified": 1547770194868,
+			"modified": 1548711712470,
 			"name": "Desenvolvimento",
 			"parentId": "env_e87667b0fde64170b27c6c47339ef02c",
 			"_type": "environment"
 		},
 		{
 			"_id": "req_1b84f84dce09437e954b293ab0b6f59c",
-			"authentication": {},
+			"authentication": {
+				"token": "{{ baseToken  }}",
+				"type": "bearer"
+			},
 			"body": {},
 			"created": 1547768391387,
 			"description": "",
@@ -102,7 +140,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1547768391487,
 			"method": "GET",
-			"modified": 1548464190188,
+			"modified": 1548711703799,
 			"name": "Player",
 			"parameters": [
 				{
@@ -123,7 +161,10 @@
 		},
 		{
 			"_id": "req_0936603efaa94d04a3cd1ebc8a3f84a1",
-			"authentication": {},
+			"authentication": {
+				"token": "{{ baseToken  }}",
+				"type": "bearer"
+			},
 			"body": {
 				"mimeType": "multipart/form-data",
 				"params": [
@@ -153,7 +194,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1548383730227.5,
 			"method": "POST",
-			"modified": 1548383749140,
+			"modified": 1548711121736,
 			"name": "Save Wer File",
 			"parameters": [],
 			"parentId": "fld_dd801c5b91a04b769a5f1244d3e4d291",
@@ -168,7 +209,10 @@
 		},
 		{
 			"_id": "req_1c0b3fb99f9440adb941de5bf7175b99",
-			"authentication": {},
+			"authentication": {
+				"token": "{{ baseToken  }}",
+				"type": "bearer"
+			},
 			"body": {},
 			"created": 1548464058179,
 			"description": "",
@@ -176,7 +220,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1547768391487,
 			"method": "GET",
-			"modified": 1548464167068,
+			"modified": 1548711133448,
 			"name": "Event",
 			"parameters": [
 				{
@@ -197,7 +241,10 @@
 		},
 		{
 			"_id": "req_6bf6bac42a3c4be2b4265d794b20950c",
-			"authentication": {},
+			"authentication": {
+				"token": "{{ baseToken  }}",
+				"type": "bearer"
+			},
 			"body": {},
 			"created": 1548464058181,
 			"description": "",
@@ -205,7 +252,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1547768391437,
 			"method": "GET",
-			"modified": 1548464169509,
+			"modified": 1548711136644,
 			"name": "Players",
 			"parameters": [
 				{
@@ -226,7 +273,10 @@
 		},
 		{
 			"_id": "req_f3d58597effb4ae0b40f1f4f2cd1ec3f",
-			"authentication": {},
+			"authentication": {
+				"token": "{{ baseToken  }}",
+				"type": "bearer"
+			},
 			"body": {},
 			"created": 1548464058183,
 			"description": "",
@@ -234,7 +284,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1547768391412,
 			"method": "GET",
-			"modified": 1548464180253,
+			"modified": 1548711143100,
 			"name": "Rounds",
 			"parameters": [
 				{
@@ -255,7 +305,10 @@
 		},
 		{
 			"_id": "req_52dc0b48e3424664acf874940ad167a7",
-			"authentication": {},
+			"authentication": {
+				"token": "{{ baseToken  }}",
+				"type": "bearer"
+			},
 			"body": {},
 			"created": 1548464088750,
 			"description": "",
@@ -263,7 +316,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1546295019158,
 			"method": "GET",
-			"modified": 1548464186181,
+			"modified": 1548711146612,
 			"name": "Matches",
 			"parameters": [
 				{
@@ -284,7 +337,10 @@
 		},
 		{
 			"_id": "req_743f29cb506b4d62a2ad884d664d91f5",
-			"authentication": {},
+			"authentication": {
+				"token": "{{ baseToken  }}",
+				"type": "bearer"
+			},
 			"body": {},
 			"created": 1548464119888,
 			"description": "",
@@ -292,7 +348,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1547768391424.5,
 			"method": "GET",
-			"modified": 1548464173373,
+			"modified": 1548711139747,
 			"name": "Teams",
 			"parameters": [
 				{
@@ -313,7 +369,10 @@
 		},
 		{
 			"_id": "req_8a23f10215a74bc5a133114afc2d7af5",
-			"authentication": {},
+			"authentication": {
+				"token": "{{ baseToken  }}",
+				"type": "bearer"
+			},
 			"body": {},
 			"created": 1548465326262,
 			"description": "",
@@ -321,7 +380,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1547768391487,
 			"method": "GET",
-			"modified": 1548465352661,
+			"modified": 1548711150709,
 			"name": "Round",
 			"parameters": [
 				{
@@ -342,7 +401,10 @@
 		},
 		{
 			"_id": "req_f0ae7e49ae104b03a801a0fe1f0aedb1",
-			"authentication": {},
+			"authentication": {
+				"token": "{{ baseToken  }}",
+				"type": "bearer"
+			},
 			"body": {},
 			"created": 1548465326267,
 			"description": "",
@@ -350,7 +412,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1547768391437,
 			"method": "GET",
-			"modified": 1548465359026,
+			"modified": 1548711153902,
 			"name": "Players",
 			"parameters": [
 				{
@@ -371,7 +433,10 @@
 		},
 		{
 			"_id": "req_b02cbb82f5d745a88e1ca3e4a86b28eb",
-			"authentication": {},
+			"authentication": {
+				"token": "{{ baseToken  }}",
+				"type": "bearer"
+			},
 			"body": {},
 			"created": 1548465326270,
 			"description": "",
@@ -379,7 +444,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1546295019158,
 			"method": "GET",
-			"modified": 1548465364088,
+			"modified": 1548711157278,
 			"name": "Matches",
 			"parameters": [
 				{
