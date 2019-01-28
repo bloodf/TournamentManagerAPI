@@ -6,7 +6,7 @@ const logger = require('../utils/logger');
 
 async function getPlayer(playerId) {
   try {
-    return Players.findById(playerId);
+    return await Players.findById(playerId);
   } catch (error) {
     logger.error(error, 'Failed to get player');
     error.logged = true;

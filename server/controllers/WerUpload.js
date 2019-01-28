@@ -42,6 +42,10 @@ async function saveWerData(payload) {
       ],
     };
 
+    const TournamentDB = await Tournaments.findByPk(tournamentId);
+
+    if (!TournamentDB) throw new Error('Tournament not found for event.');
+
     const EventFound = await Events.findOne({
       where: {
         sanctionNumber: WerData.sanctionNumber,
@@ -57,8 +61,6 @@ async function saveWerData(payload) {
     } else {
       EventDb = await Events.create(WerData, WerAssociations);
     }
-
-    const TournamentDB = await Tournaments.findById(tournamentId);
 
     await TournamentDB.addEvent(EventDb);
 
@@ -123,7 +125,7 @@ async function saveWerData(payload) {
   } catch (error) {
     logger.error(error, 'Failed to save round for event');
     error.logged = true;
-    throw error;
+    return Promise.reject(error);
   }
 }
 

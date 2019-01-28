@@ -6,7 +6,7 @@ const logger = require('../utils/logger');
 
 async function getEvent(eventId) {
   try {
-    return Events.findById(eventId);
+    return await Events.findById(eventId);
   } catch (error) {
     logger.error(error, 'Failed to get event');
     error.logged = true;
@@ -17,7 +17,7 @@ async function getEvent(eventId) {
 async function getEventPlayers(eventId) {
   try {
     const EventDb = await Events.findById(eventId);
-    return EventDb.getPlayers();
+    return await EventDb.getPlayers();
   } catch (error) {
     logger.error(error, 'Failed to get event players');
     error.logged = true;
@@ -42,7 +42,7 @@ async function getEventTeams(eventId) {
         },
       ],
     });
-    return EventDB.teams;
+    return await EventDB.teams;
   } catch (error) {
     logger.error(error, 'Failed to get event teams');
     error.logged = true;
@@ -71,7 +71,7 @@ async function getEventRounds(eventId) {
         },
       ],
     });
-    return EventDb.rounds;
+    return await EventDb.rounds;
   } catch (error) {
     logger.error(error, 'Failed to get event rounds');
     error.logged = true;
