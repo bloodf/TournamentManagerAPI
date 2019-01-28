@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   Tournament.associate = (models) => {
 
     models.Tournaments.belongsToMany(models.Users, {
-      through: 'UserTournament',
+      through: 'TournamentUser',
     });
 
     models.Tournaments.hasMany(models.Events, {
