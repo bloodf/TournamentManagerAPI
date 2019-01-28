@@ -11,7 +11,7 @@ async function upload(req) {
   } = req.payload;
 
   try {
-    return WerUploadController.saveWerData({ roundFile, tournamentId });
+    return await WerUploadController.saveWerData({ roundFile, tournamentId });
   } catch (error) {
     const errorMessage = 'Failed to upload WerReport data for event';
 

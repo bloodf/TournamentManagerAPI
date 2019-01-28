@@ -10,7 +10,7 @@ async function player(req) {
   } = req.query;
 
   try {
-    return PlayersController.getPlayer(playerId);
+    return await PlayersController.getPlayer(playerId);
   } catch (error) {
     const errorMessage = `Failed to fetch the data from playerId ${playerId}`;
 

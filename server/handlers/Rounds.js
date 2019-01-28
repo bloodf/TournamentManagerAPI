@@ -10,7 +10,7 @@ async function round(req) {
   } = req.query;
 
   try {
-    return RoundsController.getRound(roundId);
+    return await RoundsController.getRound(roundId);
   } catch (error) {
     const errorMessage = `Failed to fetch the data from roundId ${roundId}`;
 
@@ -29,7 +29,7 @@ async function roundPlayers(req) {
   } = req.query;
 
   try {
-    return RoundsController.getRoundPlayers(roundId);
+    return await RoundsController.getRoundPlayers(roundId);
   } catch (error) {
     const errorMessage = `Failed to fetch the data from roundId ${roundId}`;
 
@@ -48,7 +48,7 @@ async function roundMatches(req) {
   } = req.query;
 
   try {
-    return RoundsController.getRoundMatches(roundId);
+    return await RoundsController.getRoundMatches(roundId);
   } catch (error) {
     const errorMessage = `Failed to fetch the data from roundId ${roundId}`;
 

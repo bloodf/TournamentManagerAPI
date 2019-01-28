@@ -10,7 +10,7 @@ async function event(req) {
   } = req.query;
 
   try {
-    return EventsController.getEvent(eventId);
+    return await EventsController.getEvent(eventId);
   } catch (error) {
     const errorMessage = `Failed to fetch the data from event ${eventId}`;
 
@@ -48,7 +48,7 @@ async function eventTeams(req) {
   } = req.query;
 
   try {
-    return EventsController.getEventTeams(eventId);
+    return await EventsController.getEventTeams(eventId);
   } catch (error) {
     const errorMessage = `Failed to fetch the data from event ${eventId}`;
 
@@ -67,7 +67,7 @@ async function eventRounds(req) {
   } = req.query;
 
   try {
-    return EventsController.getEventRounds(eventId);
+    return await EventsController.getEventRounds(eventId);
   } catch (error) {
     const errorMessage = `Failed to fetch the data from event ${eventId}`;
 
@@ -86,7 +86,7 @@ async function eventMatches(req) {
   } = req.query;
 
   try {
-    return EventsController.getEventMatches(eventId);
+    return await EventsController.getEventMatches(eventId);
   } catch (error) {
     const errorMessage = `Failed to fetch the data from event ${eventId}`;
 
