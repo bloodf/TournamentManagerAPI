@@ -7,7 +7,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Tournament.associate = (models) => {
     models.Tournaments.belongsToMany(models.Users, {
+      as: 'users',
       through: 'TournamentUser',
+      primaryKey: true,
     });
 
     /* models.Tournaments.belongsToMany(models.TournamentUser, {

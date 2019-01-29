@@ -47,12 +47,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId',
     });
 
-    models.Users.belongsToMany(models.Roles, {
-      through: 'UserRole',
-    });
-
     models.Users.belongsToMany(models.Tournaments, {
+      as: 'tournaments',
       through: 'TournamentUser',
+      primaryKey: true,
     });
   };
   return User;

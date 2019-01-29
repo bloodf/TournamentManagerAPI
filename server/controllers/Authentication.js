@@ -58,18 +58,7 @@ async function validateUser(email) {
   }
 }
 
-async function userOnTournament(user) {
-  try {
-
-  } catch (error) {
-    logger.error(error, 'Failed to get player');
-    error.logged = true;
-    throw error;
-  }
-}
-
 module.exports = {
   getUser,
   validateUser,
-  userOnTournament,
 };
