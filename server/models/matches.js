@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Matches = sequelize.define('Matches', {
+  const matches = sequelize.define('matches', {
     person: DataTypes.STRING,
     opponent: DataTypes.STRING,
     outcome: DataTypes.INTEGER,
@@ -9,25 +9,21 @@ module.exports = (sequelize, DataTypes) => {
     winByDrop: DataTypes.BOOLEAN,
   }, {});
 
-  Matches.associate = (models) => {
-    models.Matches.belongsTo(models.Players, {
+  matches.associate = (models) => {
+    models.matches.belongsTo(models.players, {
       as: 'player',
-      targetKey: 'id',
-      foreignKey: 'playerId',
     });
 
-    models.Matches.belongsTo(models.Players, {
+    models.matches.belongsTo(models.players, {
       as: 'opponentPlayer',
       targetKey: 'id',
       foreignKey: 'opponentId',
     });
 
-    models.Matches.belongsTo(models.Rounds, {
+    models.matches.belongsTo(models.rounds, {
       as: 'round',
-      targetKey: 'id',
-      foreignKey: 'roundId',
     });
   };
 
-  return Matches;
+  return matches;
 };

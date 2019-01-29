@@ -1,26 +1,25 @@
 module.exports = (sequelize, DataTypes) => {
-  const Tournament = sequelize.define('Tournaments', {
+  const tournaments = sequelize.define('tournaments', {
     name: DataTypes.STRING,
     startDate: DataTypes.DATE,
     endDate: DataTypes.DATE,
     active: DataTypes.BOOLEAN,
   }, {});
-  Tournament.associate = (models) => {
-    models.Tournaments.belongsToMany(models.Users, {
+  tournaments.associate = (models) => {
+    models.tournaments.belongsToMany(models.users, {
       as: 'users',
-      through: 'TournamentUser',
+      through: 'tournamentUsers',
       primaryKey: true,
     });
 
-    /* models.Tournaments.belongsToMany(models.TournamentUser, {
-      through: 'TournamentRole',
+    /* models.tournaments.belongsToMany(models.tournamentUsers, {
+      through: 'tournamentsRole',
     }); */
 
-    models.Tournaments.hasMany(models.Events, {
+    models.tournaments.hasMany(models.events, {
       as: 'event',
-      targetKey: 'id',
-      foreignKey: 'tournamentId',
     });
   };
-  return Tournament;
+
+  return tournaments;
 };

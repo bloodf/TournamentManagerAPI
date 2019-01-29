@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Players = sequelize.define('Players', {
+  const players = sequelize.define('players', {
     dci: DataTypes.STRING,
     firstName: DataTypes.STRING,
     middleName: DataTypes.STRING,
@@ -7,41 +7,28 @@ module.exports = (sequelize, DataTypes) => {
     country: DataTypes.STRING,
     position: DataTypes.STRING,
   }, {});
-  Players.associate = (models) => {
-
-    models.Players.belongsToMany(models.Users, {
-      through: 'UserPlayers',
-    });
-
-    models.Players.belongsTo(models.Teams, {
+  players.associate = (models) => {
+    models.players.belongsTo(models.teams, {
       as: 'team',
-      targetKey: 'id',
-      foreignKey: 'teamId',
     });
 
-    models.Players.belongsTo(models.Events, {
+    models.players.belongsTo(models.events, {
       as: 'event',
-      targetKey: 'id',
-      foreignKey: 'eventId',
     });
 
-    models.Players.belongsTo(models.Users, {
+    models.players.belongsTo(models.users, {
       as: 'user',
-      targetKey: 'id',
-      foreignKey: 'userId',
     });
 
-    models.Players.hasMany(models.Matches, {
+    models.players.hasMany(models.matches, {
       as: 'match',
-      targetKey: 'id',
-      foreignKey: 'playerId',
     });
 
-    models.Players.hasMany(models.Matches, {
+    models.players.hasMany(models.matches, {
       as: 'opponentMatch',
       targetKey: 'id',
       foreignKey: 'opponentId',
     });
   };
-  return Players;
+  return players;
 };

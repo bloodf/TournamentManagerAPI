@@ -1,12 +1,12 @@
 const {
-  Events, Teams, Players, Rounds, Matches,
+  events, teams, players, rounds, matches,
 } = require('../models');
 
 const logger = require('../utils/logger');
 
 async function getEvent(eventId) {
   try {
-    return await Events.findByPk(eventId);
+    return await events.findByPk(eventId);
   } catch (error) {
     logger.error(error, 'Failed to get event');
     error.logged = true;
@@ -16,7 +16,7 @@ async function getEvent(eventId) {
 
 async function getEventPlayers(eventId) {
   try {
-    const EventDb = await Events.findByPk(eventId);
+    const EventDb = await events.findByPk(eventId);
     return await EventDb.getPlayers();
   } catch (error) {
     logger.error(error, 'Failed to get event players');
@@ -27,16 +27,16 @@ async function getEventPlayers(eventId) {
 
 async function getEventTeams(eventId) {
   try {
-    const EventDB = await Events.findOne({
+    const EventDB = await events.findOne({
       where: {
         id: eventId,
       },
       include: [
         {
-          model: Teams,
+          model: teams,
           as: 'teams',
           include: [{
-            model: Players,
+            model: players,
             as: 'members',
           }],
         },
@@ -52,19 +52,19 @@ async function getEventTeams(eventId) {
 
 async function getEventRounds(eventId) {
   try {
-    const EventDb = await Events.findOne({
+    const EventDb = await events.findOne({
       where: {
         id: eventId,
       },
       include: [
         {
-          model: Rounds,
+          model: rounds,
           as: 'rounds',
           include: [{
-            model: Matches,
+            model: matches,
             as: 'matches',
             includes: [{
-              model: Players,
+              model: players,
               as: 'player',
             }],
           }],

@@ -1,12 +1,12 @@
 const {
-  Players,
+  players,
 } = require('../models');
 
 const logger = require('../utils/logger');
 
 async function getPlayer(playerId) {
   try {
-    return await Players.findById(playerId);
+    return await players.findByPk(playerId);
   } catch (error) {
     logger.error(error, 'Failed to get player');
     error.logged = true;

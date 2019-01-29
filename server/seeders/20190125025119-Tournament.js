@@ -1,7 +1,7 @@
 const moment = require('moment');
 
 module.exports = {
-  up: queryInterface => queryInterface.bulkInsert('Tournaments', [{
+  up: queryInterface => queryInterface.bulkInsert('tournaments', [{
     name: 'Tournament Teste 1',
     startDate: new Date(),
     endDate: moment(Date.now()).add(8, 'hours').format(),
@@ -10,5 +10,5 @@ module.exports = {
     updatedAt: new Date(),
   }], {}),
 
-  down: queryInterface => queryInterface.bulkDelete('Tournaments', null, {}),
+  down: queryInterface => queryInterface.bulkDelete('tournaments', null, {}),
 };

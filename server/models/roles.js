@@ -1,9 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
-  const Roles = sequelize.define('Roles', {
+  const roles = sequelize.define('roles', {
     name: DataTypes.STRING,
     role: DataTypes.STRING,
   }, {});
-  Roles.associate = (models) => {
+  roles.associate = (models) => {
+    models.roles.hasMany(models.tournamentUsers);
   };
-  return Roles;
+  return roles;
 };

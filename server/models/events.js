@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Events = sequelize.define('Events', {
+  const events = sequelize.define('events', {
     name: DataTypes.STRING,
     sanctionNumber: DataTypes.STRING,
     guid: DataTypes.STRING,
@@ -18,31 +18,31 @@ module.exports = (sequelize, DataTypes) => {
     playoffsStartRound: DataTypes.INTEGER,
     typeCode: DataTypes.STRING,
   }, {});
-  Events.associate = (models) => {
+  events.associate = (models) => {
 
-    models.Events.hasMany(models.Rounds, {
+    models.events.hasMany(models.rounds, {
       as: 'rounds',
       targetKey: 'id',
       foreignKey: 'eventId',
     });
 
-    models.Events.hasMany(models.Teams, {
+    models.events.hasMany(models.teams, {
       as: 'teams',
       targetKey: 'id',
       foreignKey: 'eventId',
     });
 
-    models.Events.hasMany(models.Players, {
+    models.events.hasMany(models.players, {
       as: 'players',
       targetKey: 'id',
       foreignKey: 'eventId',
     });
 
-    models.Events.belongsTo(models.Tournaments, {
+    models.events.belongsTo(models.tournaments, {
       as: 'tournament',
       targetKey: 'id',
       foreignKey: 'tournamentId',
     });
   };
-  return Events;
+  return events;
 };

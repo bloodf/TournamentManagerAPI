@@ -1,12 +1,12 @@
 const {
-  Rounds, Matches, Players,
+  rounds, matches, players,
 } = require('../models');
 
 const logger = require('../utils/logger');
 
 async function getRound(roundId) {
   try {
-    return await Rounds.findByPk(roundId);
+    return await rounds.findByPk(roundId);
   } catch (error) {
     logger.error(error, 'Failed to get round');
     error.logged = true;
@@ -16,17 +16,17 @@ async function getRound(roundId) {
 
 async function getRoundPlayers(roundId) {
   try {
-    const MatchesDb = await Matches.findAll({
+    const MatchesDb = await matches.findAll({
       where: {
         roundId,
       },
       include: [
         {
-          model: Players,
+          model: players,
           as: 'player',
         },
         {
-          model: Players,
+          model: players,
           as: 'opponentPlayer',
         },
       ],
@@ -41,7 +41,7 @@ async function getRoundPlayers(roundId) {
 
 async function getRoundMatches(roundId) {
   try {
-    return await Matches.findAll({
+    return await matches.findAll({
       where: {
         roundId,
       },

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Teams = sequelize.define('Teams', {
+  const teams = sequelize.define('teams', {
     name: DataTypes.STRING,
     status: DataTypes.INTEGER,
     eliminationRound: DataTypes.INTEGER,
@@ -8,19 +8,15 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
     },
   }, {});
-  Teams.associate = (models) => {
-    models.Teams.hasMany(models.Players, {
+  teams.associate = (models) => {
+    models.teams.hasMany(models.players, {
       as: 'members',
-      targetKey: 'id',
-      foreignKey: 'teamId',
     });
 
-    models.Teams.belongsTo(models.Events, {
+    models.teams.belongsTo(models.events, {
       as: 'event',
-      targetKey: 'id',
-      foreignKey: 'eventId',
     });
   };
 
-  return Teams;
+  return teams;
 };

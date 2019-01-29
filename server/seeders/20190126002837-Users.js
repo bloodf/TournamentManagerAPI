@@ -41,14 +41,14 @@ module.exports = {
       updatedAt: new Date(),
     }));
 
-    await queryInterface.bulkInsert('Users', base, {});
+    await queryInterface.bulkInsert('users', base, {});
 
     return new Promise((resolve, reject) => {
       resolve();
     });
   },
   down: async (queryInterface) => {
-    await queryInterface.bulkDelete('Users', null, {});
+    await queryInterface.bulkDelete('users', null, {});
 
     return new Promise((resolve, reject) => {
       resolve();

@@ -1,26 +1,26 @@
 module.exports = (sequelize, DataTypes) => {
-  const Decks = sequelize.define('Decks', {
+  const decks = sequelize.define('decks', {
     userId: DataTypes.INTEGER,
     name: DataTypes.STRING,
     list: DataTypes.JSON,
     format: DataTypes.STRING,
   }, {});
-  Decks.associate = (models) => {
-    models.Decks.hasMany(models.Players, {
+  decks.associate = (models) => {
+    models.decks.hasMany(models.players, {
       as: 'player',
       targetKey: 'id',
       foreignKey: 'deckId',
     });
 
-    models.Decks.belongsToMany(models.Events, {
-      through: 'DeckEvent',
+    models.decks.belongsToMany(models.events, {
+      through: 'deckEvent',
     });
 
-    models.Decks.belongsTo(models.Users, {
+    models.decks.belongsTo(models.users, {
       as: 'user',
       targetKey: 'id',
       foreignKey: 'userId',
     });
   };
-  return Decks;
+  return decks;
 };

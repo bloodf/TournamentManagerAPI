@@ -1,5 +1,5 @@
 const {
-  Events, Players, Rounds, Matches, Teams, Tournaments, Users, Roles, TournamentUserRole,
+  events, players, rounds, matches, teams, tournaments, users, roles, tournamentUsers,
 } = require('../models');
 
 const WerManagerClass = require('../utils/werManager');
@@ -20,21 +20,21 @@ async function saveWerData(payload) {
     const WerAssociations = {
       include: [
         {
-          model: Teams,
+          model: teams,
           as: 'teams',
           include: [{
-            model: Players,
+            model: players,
             as: 'members',
           }],
         },
         {
-          model: Rounds,
+          model: rounds,
           as: 'rounds',
           include: [{
-            model: Matches,
+            model: matches,
             as: 'matches',
             includes: [{
-              model: Players,
+              model: players,
               as: 'player',
             }],
           }],
@@ -42,11 +42,11 @@ async function saveWerData(payload) {
       ],
     };
 
-    const TournamentDB = await Tournaments.findByPk(tournamentId);
+    const TournamentDB = await tournaments.findByPk(tournamentId);
 
     if (!TournamentDB) throw new Error('Tournament not found for event.');
 
-    const EventFound = await Events.findOne({
+    const EventFound = await events.findOne({
       where: {
         sanctionNumber: WerData.sanctionNumber,
         guid: WerData.guid,
@@ -54,66 +54,63 @@ async function saveWerData(payload) {
       ...WerAssociations,
     });
 
-    const RolesDB = await Roles.findAll();
+    const RolesDB = await roles.findAll();
 
     let EventDb;
 
     if (EventFound) {
       EventDb = await EventFound.update(WerData, WerAssociations);
     } else {
-      EventDb = await Events.create(WerData, WerAssociations);
+      EventDb = await events.create(WerData, WerAssociations);
     }
 
     await TournamentDB.addEvent(EventDb);
 
-    const TeamsDb = await EventDb.getTeams();
+    const TeamPlayersDb = EventDb.teams.map(team => team.members).flat();
 
-    const TeamPlayersDb = [...await Promise.all(
-      await TeamsDb
-        .map(async team => team.getMembers()),
-    )].flat();
+    await EventDb.addPlayers(TeamPlayersDb);
 
-    const EventPlayersDb = [...await Promise.all(
-      await TeamPlayersDb
-        .map(async (teamPlayer) => {
-          EventDb.addPlayers(teamPlayer);
-          return teamPlayer;
-        }),
-    )]
-      .flat();
+    const UserDb = await users.findAll({
+      where: {
+        dci: TeamPlayersDb.map(player => player.dci),
+      },
+    });
 
     await Promise.all(
       await TeamPlayersDb
         .map(async (player) => {
-          const UserDb = await Users.findOne({
-            where: {
-              dci: player.dci,
-            },
-          });
-          if (UserDb) {
-            const RoleId = RolesDB.find(role => role.role === 'player').id;
+          const UserOnTournament = UserDb.find(user => user.dci === player.dci);
+          if (UserOnTournament) {
+            const RoleModel = RolesDB.find(role => role.role === 'player');
 
-            const TournamentUserRoleOptions = {
-              UserId: UserDb.id,
-              RoleId,
-              TournamentId: TournamentDB.id,
+            await UserOnTournament.addPlayer(player);
+
+            const tournamentUserOptions = {
+              roleId: RoleModel.id,
+              userId: UserOnTournament.id,
+              tournamentId: TournamentDB.id,
             };
 
-            await UserDb.addPlayer(player);
+            const TournamentUsersDB = await tournamentUsers.findOne({
+              where: tournamentUserOptions,
+            });
+
+            if (TournamentUsersDB) {
+              await TournamentUsersDB.update(tournamentUserOptions);
+            } else {
+              await tournamentUsers.create(tournamentUserOptions);
+            }
           }
         }),
     );
 
     // const MatchesDb =
-    [...await Promise.all(
-      await EventDb
-        .getRounds()
-        .map(async round => round.getMatches()),
-    )]
+    EventDb.rounds
+      .map(round => round.matches)
       .flat()
       .map(async (match) => {
-        const MatchPlayer = EventPlayersDb.find(player => player.dci === match.person);
-        const OpponentMatch = EventPlayersDb.find(player => player.dci === match.opponent);
+        const MatchPlayer = TeamPlayersDb.find(player => player.dci === match.person);
+        const OpponentMatch = TeamPlayersDb.find(player => player.dci === match.opponent);
 
         if (MatchPlayer) await MatchPlayer.addMatch(match);
 
@@ -122,12 +119,12 @@ async function saveWerData(payload) {
         return match;
       });
 
-    return await Events.findById(EventDb.id,
+    return await events.findByPk(EventDb.id,
       {
         include: [
           ...WerAssociations.include,
           {
-            model: Players,
+            model: players,
             as: 'players',
           },
         ],

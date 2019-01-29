@@ -1,24 +1,24 @@
 const {
-  Users,
+  users,
 } = require('../models');
 
 const logger = require('../utils/logger');
 
 async function getUser(email, password) {
   try {
-    const User = await Users.findOne({
+    const userDb = await users.findOne({
       where: {
         email,
         active: true,
       },
     });
-    const ValidPassword = await User.validPassword(password);
+    const ValidPassword = await userDb.validPassword(password);
     if (ValidPassword) {
       return {
-        id: User.id,
-        name: User.name,
-        email: User.email,
-        isActive: User.active,
+        id: userDb.id,
+        name: userDb.name,
+        email: userDb.email,
+        isActive: userDb.active,
       };
     }
     return {
@@ -36,20 +36,20 @@ async function getUser(email, password) {
 
 async function validateUser(email) {
   try {
-    const User = await Users.findOne({
+    const userDb = await users.findOne({
       where: {
         email,
         active: true,
       },
     });
-    if (!User) {
+    if (!userDb) {
       throw new Error('User not found');
     }
     return {
-      id: User.id,
-      name: User.name,
-      email: User.email,
-      isActive: User.active,
+      id: userDb.id,
+      name: userDb.name,
+      email: userDb.email,
+      isActive: userDb.active,
     };
   } catch (error) {
     logger.error(error, 'Failed to get player');

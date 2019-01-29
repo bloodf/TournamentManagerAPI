@@ -2,7 +2,7 @@
 const bcrypt = require('bcrypt');
 
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define('Users', {
+  const users = sequelize.define('users', {
     name: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
@@ -30,28 +30,24 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  User.prototype.validPassword = async function (password) {
+  users.prototype.validPassword = async function (password) {
     return bcrypt.compare(`${password}`, `${this.password}`);
   };
 
-  User.associate = (models) => {
-    models.Users.hasMany(models.Players, {
+  users.associate = (models) => {
+    models.users.hasMany(models.players, {
       as: 'player',
-      targetKey: 'id',
-      foreignKey: 'userId',
     });
 
-    models.Users.hasMany(models.Decks, {
+    models.users.hasMany(models.decks, {
       as: 'deck',
-      targetKey: 'id',
-      foreignKey: 'userId',
     });
 
-    models.Users.belongsToMany(models.Tournaments, {
+    models.users.belongsToMany(models.tournaments, {
       as: 'tournaments',
-      through: 'TournamentUser',
+      through: 'tournamentUsers',
       primaryKey: true,
     });
   };
-  return User;
+  return users;
 };
