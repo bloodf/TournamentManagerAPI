@@ -35,19 +35,10 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   User.associate = (models) => {
-
     models.Users.hasMany(models.Players, {
       as: 'player',
       targetKey: 'id',
       foreignKey: 'userId',
-    });
-
-    models.Users.belongsToMany(models.Tournaments, {
-      through: 'TournamentUser',
-    });
-
-    models.Users.belongsToMany(models.Roles, {
-      through: 'UserRole',
     });
 
     models.Users.hasMany(models.Decks, {
@@ -56,6 +47,13 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'userId',
     });
 
+    models.Users.belongsToMany(models.Roles, {
+      through: 'UserRole',
+    });
+
+    models.Users.belongsToMany(models.Tournaments, {
+      through: 'TournamentUser',
+    });
   };
   return User;
 };

@@ -4,14 +4,9 @@ const {
 
 const logger = require('../utils/logger');
 
-async function getUserRoles(UserModel) {
-  const UserDB = await UserModel.getRoles();
-  return UserDB.map(role => role.role);
-}
-
 async function getUser(email, password) {
   try {
-    const User = await Users.find({
+    const User = await Users.findOne({
       where: {
         email,
         active: true,
@@ -19,14 +14,11 @@ async function getUser(email, password) {
     });
     const ValidPassword = await User.validPassword(password);
     if (ValidPassword) {
-      const RolesDB = await getUserRoles(User);
-
       return {
         id: User.id,
         name: User.name,
         email: User.email,
         isActive: User.active,
-        roles: RolesDB,
       };
     }
     return {
@@ -44,22 +36,31 @@ async function getUser(email, password) {
 
 async function validateUser(email) {
   try {
-    const User = await Users.find({
+    const User = await Users.findOne({
       where: {
         email,
         active: true,
       },
     });
-
-    const RolesDB = await getUserRoles(User);
-
+    if (!User) {
+      throw new Error('User not found');
+    }
     return {
       id: User.id,
       name: User.name,
       email: User.email,
       isActive: User.active,
-      roles: RolesDB,
     };
+  } catch (error) {
+    logger.error(error, 'Failed to get player');
+    error.logged = true;
+    throw error;
+  }
+}
+
+async function userOnTournament(user) {
+  try {
+
   } catch (error) {
     logger.error(error, 'Failed to get player');
     error.logged = true;
@@ -70,4 +71,5 @@ async function validateUser(email) {
 module.exports = {
   getUser,
   validateUser,
+  userOnTournament,
 };

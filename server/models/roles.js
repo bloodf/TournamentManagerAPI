@@ -8,7 +8,6 @@ module.exports = (sequelize, DataTypes) => {
     models.Roles.belongsToMany(models.Users, {
       through: 'UserRole',
     });
-
   };
   return Roles;
 };

@@ -6,7 +6,7 @@ const logger = require('../utils/logger');
 
 async function getRound(roundId) {
   try {
-    return await Rounds.findById(roundId);
+    return await Rounds.findByPk(roundId);
   } catch (error) {
     logger.error(error, 'Failed to get round');
     error.logged = true;

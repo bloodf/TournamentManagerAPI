@@ -13,10 +13,7 @@ module.exports = {
     return {
       isValid: UserDB.isActive,
       credentials: {
-        id: UserDB.id,
-        name: UserDB.name,
-        email: UserDB.email,
-        roles: UserDB.roles,
+        ...UserDB,
       },
     };
   },

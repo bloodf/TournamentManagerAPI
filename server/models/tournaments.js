@@ -6,10 +6,13 @@ module.exports = (sequelize, DataTypes) => {
     active: DataTypes.BOOLEAN,
   }, {});
   Tournament.associate = (models) => {
-
     models.Tournaments.belongsToMany(models.Users, {
       through: 'TournamentUser',
     });
+
+    /* models.Tournaments.belongsToMany(models.TournamentUser, {
+      through: 'TournamentRole',
+    }); */
 
     models.Tournaments.hasMany(models.Events, {
       as: 'event',

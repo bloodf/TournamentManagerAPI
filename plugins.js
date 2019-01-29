@@ -12,6 +12,6 @@ const ACLAUTH = {
   },
 };
 
-const plugins = [ACLAUTH];
+const plugins = [];
 
 module.exports = plugins;

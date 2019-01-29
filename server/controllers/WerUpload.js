@@ -1,5 +1,5 @@
 const {
-  Events, Players, Rounds, Matches, Teams, Tournaments, Users,
+  Events, Players, Rounds, Matches, Teams, Tournaments, Users, Roles, TournamentUserRole,
 } = require('../models');
 
 const WerManagerClass = require('../utils/werManager');
@@ -54,6 +54,8 @@ async function saveWerData(payload) {
       ...WerAssociations,
     });
 
+    const RolesDB = await Roles.findAll();
+
     let EventDb;
 
     if (EventFound) {
@@ -83,13 +85,21 @@ async function saveWerData(payload) {
     await Promise.all(
       await TeamPlayersDb
         .map(async (player) => {
-          const UserDb = await Users.find({
+          const UserDb = await Users.findOne({
             where: {
               dci: player.dci,
             },
           });
           if (UserDb) {
-            UserDb.addPlayer(player);
+            const RoleId = RolesDB.find(role => role.role === 'player').id;
+
+            const TournamentUserRoleOptions = {
+              UserId: UserDb.id,
+              RoleId,
+              TournamentId: TournamentDB.id,
+            };
+
+            await UserDb.addPlayer(player);
           }
         }),
     );

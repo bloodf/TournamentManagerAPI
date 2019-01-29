@@ -42,14 +42,14 @@ module.exports = {
     }));
 
     await queryInterface.bulkInsert('Users', base, {});
-    await queryInterface.bulkInsert('UserRole', UserRole, {});
+
     return new Promise((resolve, reject) => {
       resolve();
     });
   },
   down: async (queryInterface) => {
     await queryInterface.bulkDelete('Users', null, {});
-    await queryInterface.bulkDelete('UserRole', null, {});
+
     return new Promise((resolve, reject) => {
       resolve();
     });
