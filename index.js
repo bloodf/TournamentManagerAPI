@@ -1,12 +1,11 @@
 // require new relic at the top only in production environment
 const config = require('config');
 const server = require('./server');
-const plugins = require('./plugins');
+const plugins = require('./server/plugins');
 const logger = require('./server/utils/logger');
 const { sequelize } = require('./server/models');
 
 function gracefulStopServer() {
-  // Wait 10 secs for existing connection to close and then exit.
   server.stop({ timeout: 10 * 1000 }, () => {
     logger.info('Shutting down server');
     process.exit(0);
@@ -38,7 +37,6 @@ async function startServer() {
     await sequelize.sync({
       force: false,
     });
-    // add things here before the app starts, like database connection check etc
     await server.register(plugins);
     await server.start();
     logger.info(`server started at port: ${config.get('app.port')} with env: ${config.util.getEnv('NODE_ENV')}`);

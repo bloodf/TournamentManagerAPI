@@ -12,6 +12,9 @@ async function getUser(email, password) {
         active: true,
       },
     });
+
+    if (!userDb) throw new Error('User not found');
+
     const ValidPassword = await userDb.validPassword(password);
     if (ValidPassword) {
       return {

@@ -32,6 +32,7 @@
     "good-console": "^7.1.0",
     "hapi": "17.8.1",
     "hapi-acl-auth": "^1.0.5",
+    "hapi-cors-headers": "^1.0.3",
     "hapi-jsonwebtoken": "^1.1.0",
     "hapi-swagger": "9.3.0",
     "hapi-view-models": "^1.1.0",
