@@ -7,8 +7,9 @@ const logger = require('../utils/logger');
 async function upload(req) {
   const {
     file: roundFile,
-    tournamentId,
   } = req.payload;
+
+  const { tournamentId } = req.params;
 
   try {
     return await WerUploadController.saveWerData({ roundFile, tournamentId });

@@ -13,6 +13,9 @@ routes.push({
   options: {
     tags: ['api', 'round', 'GET'],
     validate: RoundsValidations,
+    plugins: {
+      policies: ['isTournamentUser'],
+    },
   },
 });
 
@@ -25,9 +28,7 @@ routes.push({
     tags: ['api', 'roundPlayers', 'GET'],
     validate: RoundsValidations,
     plugins: {
-      hapiAclAuth: {
-        roles: ACLRoles('player'),
-      },
+      policies: ['isTournamentUser'],
     },
   },
 });
@@ -41,9 +42,7 @@ routes.push({
     tags: ['api', 'roundMatches', 'GET'],
     validate: RoundsValidations,
     plugins: {
-      hapiAclAuth: {
-        roles: ACLRoles('player'),
-      },
+      policies: ['isTournamentUser'],
     },
   },
 });

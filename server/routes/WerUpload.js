@@ -8,7 +8,7 @@ const routes = [];
 
 // POST /werUpload
 routes.push({
-  path: `${API_PATH}/werUpload`,
+  path: `${API_PATH}/tournament/{tournamentId}/wer`,
   method: 'POST',
   handler: WerUpload.upload,
   options: {
@@ -19,9 +19,7 @@ routes.push({
     tags: ['api', 'WerUpload', 'POST'],
     validate: WerValidations,
     plugins: {
-      hapiAclAuth: {
-        roles: ACLRoles('staff'),
-      },
+      policies: ['isTournamentStaff'],
     },
   },
 });

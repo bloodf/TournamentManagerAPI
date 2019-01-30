@@ -2,11 +2,13 @@ const joi = require('joi');
 
 module.exports = {
   headers: {},
-  payload: {
+  params: {
     tournamentId: joi
       .number()
       .required()
       .description('Tournament identification of the Event'),
+  },
+  payload: {
     file: joi
       .any()
       .required()

@@ -1,18 +1,19 @@
 /*eslint-disable */
 const config = require('config');
-
-const Acl = require('./authentication/acl');
+const HapiResponseTime = require('hapi-response-time');
+const MrHorse = require('mrhorse');
 const Package = require('../package.json');
 
-const DEVELOPMENT = 'development';
-
-const ACLAUTH = {
-  plugin: require('hapi-acl-auth'),
+const AclPolicies = {
+  plugin: MrHorse,
   options: {
-    handler: Acl.handler,
+    policyDirectory: `${__dirname}/policies`,
   },
 };
 
-const plugins = [];
+const plugins = [
+  HapiResponseTime,
+  AclPolicies
+];
 
 module.exports = plugins;

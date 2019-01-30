@@ -14,9 +14,6 @@ routes.push({
     tags: ['api', 'authentication', 'POST'],
     validate: AuthenticationValidations,
     plugins: {
-      hapiAclAuth: {
-        secure: false,
-      },
     },
   },
 });

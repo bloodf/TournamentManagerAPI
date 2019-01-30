@@ -35,13 +35,16 @@ module.exports = {
   up: async (queryInterface) => {
     const base = Users();
     const UserRole = base.map((u, i) => ({
-      UserId: i + 1,
-      RoleId: i === 0 ? 1 : 6,
+      userId: i + 1,
+      roleId: i === 0 ? 1 : 6,
+      tournamentId: 1,
       createdAt: new Date(),
       updatedAt: new Date(),
     }));
 
     await queryInterface.bulkInsert('users', base, {});
+
+    await queryInterface.bulkInsert('tournamentUsers', UserRole, {});
 
     return new Promise((resolve, reject) => {
       resolve();

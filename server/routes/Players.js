@@ -7,16 +7,14 @@ const routes = [];
 
 // GET /players
 routes.push({
-  path: `${API_PATH}/player`,
+  path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}/players/{playerId}`,
   method: 'GET',
   handler: PlayersHandler.player,
   options: {
     tags: ['api', 'player', 'GET'],
     validate: PlayersValidations.player,
     plugins: {
-      hapiAclAuth: {
-        roles: ACLRoles('player'),
-      },
+      policies: ['isTournamentUser'],
     },
   },
 });

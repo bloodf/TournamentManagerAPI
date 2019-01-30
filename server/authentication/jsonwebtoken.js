@@ -1,7 +1,7 @@
 const AuthenticationController = require('../controllers/Authentication');
 
 module.exports = {
-  secretOrPrivateKey: 's3cr3t',
+  secretOrPrivateKey: 'FIzKuvuq7GYA01E1PXZhIQgmLJiPVbqz',
   sign: {},
   decode: {},
   verify: {},

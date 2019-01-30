@@ -3,7 +3,11 @@ const joi = require('joi');
 module.exports = {
   event: {
     headers: {},
-    query: {
+    params: {
+      tournamentId: joi
+        .number()
+        .required()
+        .description('tournament id that you want to get'),
       eventId: joi
         .number()
         .required()

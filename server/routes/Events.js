@@ -2,13 +2,11 @@ const { API_PATH } = require('../utils');
 const EventsHandler = require('../handlers/Events');
 const EventsValidations = require('../validations/Events');
 
-const ACLRoles = require('../authentication/aclRoles');
-
 const routes = [];
 
 // GET /event
 routes.push({
-  path: `${API_PATH}/event`,
+  path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}`,
   method: 'GET',
   handler: EventsHandler.event,
   options: {
@@ -16,7 +14,7 @@ routes.push({
     validate: EventsValidations.event,
     plugins: {
       hapiAclAuth: {
-        roles: ACLRoles('player'),
+        policies: ['isTournamentUser'],
       },
     },
   },
@@ -24,64 +22,56 @@ routes.push({
 
 // GET /eventPlayers
 routes.push({
-  path: `${API_PATH}/eventPlayers`,
+  path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}/players`,
   method: 'GET',
   handler: EventsHandler.eventPlayers,
   options: {
     tags: ['api', 'eventPlayers', 'GET'],
     validate: EventsValidations.event,
     plugins: {
-      hapiAclAuth: {
-        roles: ACLRoles('player'),
-      },
+      policies: ['isTournamentUser'],
     },
   },
 });
 
 // GET /eventTeams
 routes.push({
-  path: `${API_PATH}/eventTeams`,
+  path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}/teams`,
   method: 'GET',
   handler: EventsHandler.eventTeams,
   options: {
     tags: ['api', 'eventTeams', 'GET'],
     validate: EventsValidations.event,
     plugins: {
-      hapiAclAuth: {
-        roles: ACLRoles('player'),
-      },
+      policies: ['isTournamentUser'],
     },
   },
 });
 
 // GET /eventRounds
 routes.push({
-  path: `${API_PATH}/eventRounds`,
+  path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}/rounds`,
   method: 'GET',
   handler: EventsHandler.eventRounds,
   options: {
     tags: ['api', 'eventTeams', 'GET'],
     validate: EventsValidations.event,
     plugins: {
-      hapiAclAuth: {
-        roles: ACLRoles('player'),
-      },
+      policies: ['isTournamentUser'],
     },
   },
 });
 
 // GET /eventMatches
 routes.push({
-  path: `${API_PATH}/eventMatches`,
+  path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}/matches`,
   method: 'GET',
   handler: EventsHandler.eventMatches,
   options: {
     tags: ['api', 'eventTeams', 'GET'],
     validate: EventsValidations.event,
     plugins: {
-      hapiAclAuth: {
-        roles: ACLRoles('player'),
-      },
+      policies: ['isTournamentUser'],
     },
   },
 });
