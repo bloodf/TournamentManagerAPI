@@ -1,7 +1,6 @@
 const { API_PATH } = require('../utils');
 const PlayersHandler = require('../handlers/Players');
 const PlayersValidations = require('../validations/Players');
-const ACLRoles = require('../authentication/aclRoles');
 
 const routes = [];
 

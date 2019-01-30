@@ -2,8 +2,6 @@ const { API_PATH } = require('../utils');
 const WerUpload = require('../handlers/WerUpload');
 const WerValidations = require('../validations/WerUpload');
 
-const ACLRoles = require('../authentication/aclRoles');
-
 const routes = [];
 
 // POST /werUpload
@@ -20,6 +18,11 @@ routes.push({
     validate: WerValidations,
     plugins: {
       policies: ['isTournamentStaff'],
+      disinfect: {
+        disinfectQuery: true,
+        disinfectParams: true,
+        disinfectPayload: false,
+      },
     },
   },
 });

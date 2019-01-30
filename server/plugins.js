@@ -2,6 +2,7 @@
 const config = require('config');
 const HapiResponseTime = require('hapi-response-time');
 const MrHorse = require('mrhorse');
+const disinfect = require('disinfect');
 const Package = require('../package.json');
 
 const AclPolicies = {
@@ -11,9 +12,19 @@ const AclPolicies = {
   },
 };
 
+const Cleaner = {
+  plugin: disinfect,
+  options: {
+    disinfectQuery: true,
+    disinfectParams: true,
+    disinfectPayload: true,
+  },
+};
+
 const plugins = [
   HapiResponseTime,
-  AclPolicies
+  AclPolicies,
+  Cleaner,
 ];
 
 module.exports = plugins;

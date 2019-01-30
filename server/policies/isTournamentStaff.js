@@ -5,7 +5,7 @@ const {
 } = require('../models');
 const AclRoles = require('../authentication/aclRoles');
 
-const Policy = async function (request, h) {
+async function Policy(request, h) {
   const { credentials } = request.auth;
   const { tournamentId } = request.params;
 
@@ -22,7 +22,7 @@ const Policy = async function (request, h) {
   }
 
   throw boom.forbidden('Not an tournament staff.');
-};
+}
 
 Policy.applyPoint = 'onPreHandler';
 
