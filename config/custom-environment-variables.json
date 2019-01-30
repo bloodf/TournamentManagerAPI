@@ -6,10 +6,10 @@
     "logLevel": "LOG_LEVEL"
   },
   "db": {
-    "name": "DB_NAME",
+    "name": "POSTGRES_DB",
     "host": "DB_HOST",
-    "user": "DB_USER",
-    "password": "DB_PASSWORD",
+    "user": "POSTGRES_USER",
+    "password": "POSTGRES_PASSWORD",
     "test": "DB_TEST",
     "dialect": "DB_DIALECT"
   }

@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  postgres:
+    env_file: bin/.env
+  api:
+    env_file: bin/.env
