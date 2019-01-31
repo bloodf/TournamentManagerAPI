@@ -5,13 +5,12 @@ services:
     image: postgres:latest
     env_file: bin/dev.env
   api:
-    build:
-      context: .
+    image: node:alpine
     volumes:
       - .:/app
     depends_on:
       - postgres
-    command: ["./bin/wait-for-it.sh", "aerospike:3030", "--", "npm", "start"]
+    command: ["npm", "install", "&&", "npm", "run", "dev"]
     env_file: bin/dev.env
     ports:
       - "3030:3030"
