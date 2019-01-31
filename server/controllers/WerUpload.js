@@ -5,12 +5,8 @@ const {
 const WerManagerClass = require('../utils/werManager');
 const logger = require('../utils/logger');
 
-async function saveWerData(payload) {
-  const { roundFile, tournamentId } = payload;
+async function saveWerOnDB(tournamentId, WerManager) {
   try {
-    const WerManager = new WerManagerClass();
-    await WerManager.parse(roundFile._data);
-
     const WerData = {
       ...WerManager.event,
       teams: [...WerManager.teams],
@@ -66,7 +62,8 @@ async function saveWerData(payload) {
 
     await TournamentDB.addEvent(EventDb);
 
-    const TeamPlayersDb = EventDb.teams.map(team => team.members).flat();
+    const TeamPlayersDb = EventDb.teams.map(team => team.members)
+      .flat();
 
     await EventDb.addPlayers(TeamPlayersDb);
 
@@ -129,6 +126,30 @@ async function saveWerData(payload) {
           },
         ],
       });
+
+  } catch (error) {
+    logger.error(error, 'Failed to save round for event');
+    error.logged = true;
+    return Promise.reject(error);
+  }
+}
+
+async function saveWerData(payload) {
+  const { roundFile, tournamentId } = payload;
+  try {
+    const WerManager = new WerManagerClass();
+    const WerParsed = await WerManager.parse(roundFile._data);
+    if (Array.isArray(WerParsed)) {
+      const ParsedArray = Promise.all([...await WerParsed.map(async (wer) => {
+        const TempWerManager = new WerManagerClass();
+        const EventDB = await saveWerOnDB(tournamentId, TempWerManager.define(wer));
+        return EventDB;
+      })]);
+      return ParsedArray;
+    }
+
+    WerManager.define(WerParsed);
+    return await saveWerOnDB(tournamentId, WerManager);
   } catch (error) {
     logger.error(error, 'Failed to save round for event');
     error.logged = true;

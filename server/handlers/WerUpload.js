@@ -10,9 +10,12 @@ async function upload(req) {
   } = req.payload;
 
   const { tournamentId } = req.params;
-
+  if (!roundFile.hapi.filename.endsWith('.wer')) throw new Error('Not a Wer File');
   try {
-    return await WerUploadController.saveWerData({ roundFile, tournamentId });
+    return await WerUploadController.saveWerData({
+      roundFile,
+      tournamentId,
+    });
   } catch (error) {
     const errorMessage = 'Failed to upload WerReport data for event';
 

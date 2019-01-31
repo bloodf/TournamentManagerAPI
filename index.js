@@ -1,9 +1,13 @@
 // require new relic at the top only in production environment
 const config = require('config');
+const path = require('path');
+
 const server = require('./server');
 const plugins = require('./server/plugins');
 const logger = require('./server/utils/logger');
 const { sequelize } = require('./server/models');
+
+global.tempFolder = path.join(path.resolve(__dirname), 'temp');
 
 function gracefulStopServer() {
   server.stop({ timeout: 10 * 1000 }, () => {

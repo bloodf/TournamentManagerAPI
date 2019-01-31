@@ -1,5 +1,7 @@
 const XML2JS = require('xml2js');
+const StripBom = require('remove-bom-buffer');
 const uuidv4 = require('uuid/v4');
+const detect = require('charset-detector');
 
 class WerManager {
   constructor() {
@@ -21,9 +23,9 @@ class WerManager {
       endDate: this._event.enddate,
       format: this._event.format,
       eliminationType: this._event.eliminationType,
-      casual: JSON.parse(this._event.iscasualreportonly.toLowerCase()),
+      casual: JSON.parse(this._event.iscasualreportonly.toLowerCase() || 'false'),
       status: this._event.status,
-      playoff: JSON.parse(this._event.isplayoff.toLowerCase()),
+      playoff: JSON.parse(this._event.isplayoff.toLowerCase() || 'false'),
       manualMatches: this._event.manualmatchround,
       notes: this._event.notes,
       numberOfRounds: this._event.numberofrounds,
@@ -97,7 +99,7 @@ class WerManager {
         win: match.win,
         loss: match.loss,
         draw: match.draw,
-        winByDrop: JSON.parse(match.winbydrop.toLowerCase()),
+        winByDrop: JSON.parse(match.winbydrop.toLowerCase() || 'false'),
       })),
     }));
   }
@@ -121,25 +123,40 @@ class WerManager {
     }))];
   }
 
+  define(result) {
+    this.event = result.$;
+    result.participation.forEach((ep) => {
+      if (ep.person) this.players = ep.person;
+      if (ep.team) this.teams = ep.team;
+      if (ep.role) this.roles = ep.role;
+    });
+    result.matches.forEach((mr) => {
+      this.rounds = mr.round;
+    });
+  }
+
   async parse(werData) {
     try {
+      this.void = null;
       const XmlParser = new XML2JS.Parser();
+
+      const BufferType = detect(werData);
+      let Wer;
+      if (BufferType[0].charsetName === 'UTF-16LE') {
+        Wer = werData.toString('utf16le');
+      } else {
+        Wer = StripBom(werData);
+      }
+
       return new Promise((resolve, reject) => {
-        XmlParser.parseString(werData, (err, result) => {
+        XmlParser.parseString(Wer, (err, result) => {
           if (err) reject(err);
-
-          this.event = result.event.$;
-          result.event.participation.forEach((ep) => {
-            this.players = ep.person;
-            this.teams = ep.team;
-            this.roles = ep.role;
-          });
-          result.event.matches.forEach((mr) => {
-            this.rounds = mr.round;
-          });
-
-          resolve(result);
+          if (result.eventupload && result.eventupload.event) {
+            resolve(result.eventupload.event);
+          }
+          resolve(result.event);
         });
+
       });
     } catch (e) {
       throw e;

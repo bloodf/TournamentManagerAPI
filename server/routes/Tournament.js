@@ -1,10 +1,30 @@
 const { API_PATH } = require('../utils');
 const EventsHandler = require('../handlers/Events');
 const EventsValidations = require('../validations/Events');
+const WerUpload = require('../handlers/WerUpload');
+const WerValidations = require('../validations/WerUpload');
+
 
 const routes = [];
 
-// GET /event
+routes.push({
+  path: `${API_PATH}/tournament/{tournamentId}/wer`,
+  method: 'POST',
+  handler: WerUpload.upload,
+  options: {
+    payload: {
+      output: 'stream',
+      allow: 'multipart/form-data',
+    },
+    tags: ['api', 'WerUpload', 'POST'],
+    validate: WerValidations,
+    plugins: {
+      policies: ['isTournamentStaff'],
+      disinfect: false,
+    },
+  },
+});
+
 routes.push({
   path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}`,
   method: 'GET',
@@ -20,7 +40,6 @@ routes.push({
   },
 });
 
-// GET /eventPlayers
 routes.push({
   path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}/players`,
   method: 'GET',
@@ -34,7 +53,6 @@ routes.push({
   },
 });
 
-// GET /eventTeams
 routes.push({
   path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}/teams`,
   method: 'GET',
@@ -48,7 +66,6 @@ routes.push({
   },
 });
 
-// GET /eventRounds
 routes.push({
   path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}/rounds`,
   method: 'GET',
@@ -62,7 +79,6 @@ routes.push({
   },
 });
 
-// GET /eventMatches
 routes.push({
   path: `${API_PATH}/tournament/{tournamentId}/event/{eventId}/matches`,
   method: 'GET',

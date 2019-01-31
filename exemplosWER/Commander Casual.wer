@@ -1,33 +1,37 @@
-<event sanctionnumber="15-11-7429608" eventguid="0c55134c-590a-457c-8175-f87732518907" eventtypeid="224" orgname="UG Cardshop" gamecd="161" coordinator="18737483" startdate="2015-11-21" postevententry="false" enddate="2015-11-21T18:36:18" format="161" eliminationType="3" iscasualreportonly="False" title="Magic Casual Multi-Player 2015/11/21" isstarted="False" status="8" batchid="" isplayoff="False" manualmatchround="0" notes="" numberofrounds="0" playoffstartround="0">
+<event sanctionnumber="15-11-7429608" eventguid="0c55134c-590a-457c-8175-f87732518907" eventtypeid="224"
+       orgname="UG Cardshop" gamecd="161" coordinator="18737483" startdate="2015-11-21" postevententry="false"
+       enddate="2015-11-21T18:36:18" format="161" eliminationType="3" iscasualreportonly="False"
+       title="Magic Casual Multi-Player 2015/11/21" isstarted="False" status="8" batchid="" isplayoff="False"
+       manualmatchround="0" notes="" numberofrounds="0" playoffstartround="0">
   <participation>
-    <person id="7209376598" first="Alice" last="Araujo" middle="" country="BR" />
-    <person id="7103420757" first="Nathanael" last="Batista" middle="" country="BR" />
-    <person id="18737483" first="Bruno" last="Da Fonseca" middle="" country="BR" />
-    <person id="8107288634" first="Thiago" last="Dalpino" middle="R" country="BR" />
+    <person id="7209376598" first="Alice" last="Araujo" middle="" country="BR"/>
+    <person id="7103420757" first="Nathanael" last="Batista" middle="" country="BR"/>
+    <person id="18737483" first="Bruno" last="Da Fonseca" middle="" country="BR"/>
+    <person id="8107288634" first="Thiago" last="Dalpino" middle="R" country="BR"/>
     <team id="5529" name="Araujo, Alice" status="2" eliminationround="0">
-      <member position="A" person="7209376598" />
+      <member position="A" person="7209376598"/>
     </team>
     <team id="5530" name="Batista, Nathanael" status="2" eliminationround="0">
-      <member position="A" person="7103420757" />
+      <member position="A" person="7103420757"/>
     </team>
     <team id="5531" name="Da Fonseca, Bruno" status="2" eliminationround="0">
-      <member position="A" person="18737483" />
+      <member position="A" person="18737483"/>
     </team>
     <team id="5532" name="Dalpino, Thiago" status="2" eliminationround="0">
-      <member position="A" person="8107288634" />
+      <member position="A" person="8107288634"/>
     </team>
     <role cd="PL" type="PA">
-      <ref person="18737483" seq="1" />
-      <ref person="7209376598" seq="2" />
-      <ref person="8107288634" seq="3" />
-      <ref person="7103420757" seq="4" />
+      <ref person="18737483" seq="1"/>
+      <ref person="7209376598" seq="2"/>
+      <ref person="8107288634" seq="3"/>
+      <ref person="7103420757" seq="4"/>
     </role>
-    <role cd="PL" type="DQ" />
-    <role cd="JG" type="PA" />
+    <role cd="PL" type="DQ"/>
+    <role cd="JG" type="PA"/>
   </participation>
-  <matches />
-  <seats />
-  <pods />
+  <matches/>
+  <seats/>
+  <pods/>
   <log>
     <entry date="2015-11-21T18:34:36" operation="CRE">4.2.3.4</entry>
     <entry date="2015-11-21T18:36:18" operation="COM">Tournament Completed</entry>
