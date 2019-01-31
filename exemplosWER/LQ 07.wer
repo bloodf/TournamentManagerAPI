@@ -1,0 +1,82 @@
+<event sanctionnumber="15-11-7423445" eventguid="4e050e90-0f3f-4fc9-bcab-2dfff566b54e" eventtypeid="133" orgname="UG Cardshop" gamecd="6" coordinator="18737483" startdate="2015-11-20" postevententry="false" enddate="2015-11-20T20:44:41" format="6" eliminationType="4" iscasualreportonly="False" title="Magic 2015/11/20" isstarted="True" status="8" batchid="" isplayoff="False" manualmatchround="0" notes="" numberofrounds="-1" playoffstartround="0">
+  <participation>
+    <person id="1202896674" first="Alvaro" last="Faria" middle="" country="BR" />
+    <person id="5107375992" first="Luis Felipe" last="Nicolette" middle=" " country="BR" />
+    <person id="6103799758" first="Rafael" last="Obrusnik" middle="" country="BR" />
+    <person id="1201053814" first="Victor" last="Aulio Haikal" middle="" country="BR" />
+    <person id="6223758249" first="Pedro" last="Maciel" middle="" country="BR" />
+    <person id="1206958274" first="Frederico" last="Matias Lemos" middle="" country="BR" />
+    <person id="89632715" first="Diego" last="Bitelo Da Silva" middle="" country="BR" />
+    <person id="3209513764" first="Jorge" last="Antonio Martins Dos Santos" middle="" country="BR" />
+    <team id="5384" name="Nicolette, Luis Felipe" status="4" eliminationround="1">
+      <member position="A" person="5107375992" />
+    </team>
+    <team id="5385" name="Obrusnik, Rafael" status="4" eliminationround="1">
+      <member position="A" person="6103799758" />
+    </team>
+    <team id="5386" name="Bitelo Da Silva, Diego" status="4" eliminationround="3">
+      <member position="A" person="89632715" />
+    </team>
+    <team id="5387" name="Aulio Haikal, Victor" status="4" eliminationround="2">
+      <member position="A" person="1201053814" />
+    </team>
+    <team id="5388" name="Maciel, Pedro" status="4" eliminationround="2">
+      <member position="A" person="6223758249" />
+    </team>
+    <team id="5396" name="Matias Lemos, Frederico" status="4" eliminationround="1">
+      <member position="A" person="1206958274" />
+    </team>
+    <team id="5397" name="Faria, Alvaro" status="2" eliminationround="0">
+      <member position="A" person="1202896674" />
+    </team>
+    <team id="5398" name="Antonio Martins Dos Santos, Jorge" status="4" eliminationround="1">
+      <member position="A" person="3209513764" />
+    </team>
+    <role cd="PL" type="PA">
+      <ref person="1202896674" seq="1" />
+      <ref person="89632715" seq="2" />
+      <ref person="1201053814" seq="3" />
+      <ref person="6223758249" seq="4" />
+      <ref person="5107375992" seq="5" />
+      <ref person="3209513764" seq="6" />
+      <ref person="1206958274" seq="7" />
+      <ref person="6103799758" seq="8" />
+    </role>
+    <role cd="PL" type="DQ" />
+    <role cd="JG" type="PA" />
+  </participation>
+  <matches>
+    <round number="1" gamecd="6" date="2015-11-20T18:35:48" teamformat="false">
+      <match person="1202896674" opponent="5107375992" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1201053814" opponent="6103799758" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="6223758249" opponent="1206958274" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="89632715" opponent="3209513764" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="2" gamecd="6" date="2015-11-20T20:44:13" teamformat="false">
+      <match person="1202896674" opponent="1201053814" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="89632715" opponent="6223758249" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="3" gamecd="6" date="2015-11-20T20:44:24" teamformat="false">
+      <match person="1202896674" opponent="89632715" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+  </matches>
+  <seats />
+  <pods>
+    <podround>
+      <round number="1" />
+      <round number="2" />
+      <round number="3" />
+    </podround>
+  </pods>
+  <log>
+    <entry date="2015-11-20T17:42:50" operation="CRE">4.2.3.4</entry>
+    <entry date="2015-11-20T18:35:48" operation="ROUND">Round Started 1</entry>
+    <entry date="2015-11-20T18:35:52" operation="MATCH">Matches created using match algorithm for round 1.</entry>
+    <entry date="2015-11-20T20:44:13" operation="ROUND">Round Started 2</entry>
+    <entry date="2015-11-20T20:44:16" operation="MATCH">Matches created using match algorithm for round 2.</entry>
+    <entry date="2015-11-20T20:44:24" operation="ROUND">Round Started 3</entry>
+    <entry date="2015-11-20T20:44:28" operation="MATCH">Matches created using match algorithm for round 3.</entry>
+    <entry date="2015-11-20T20:44:41" operation="COM">Tournament Completed</entry>
+    <entry date="2015-11-20T20:44:46" operation="UPL">Results being uploaded.</entry>
+  </log>
+</event>

@@ -1,0 +1,82 @@
+<event sanctionnumber="15-11-7423658" eventguid="7dca74f7-a633-40f2-b5b1-fdc2ed580889" eventtypeid="133" orgname="UG Cardshop" gamecd="6" coordinator="18737483" startdate="2015-11-20" postevententry="false" enddate="2015-11-20T22:12:38" format="6" eliminationType="4" iscasualreportonly="False" title="Magic 2015/11/20" isstarted="True" status="8" batchid="" isplayoff="False" manualmatchround="0" notes="" numberofrounds="-1" playoffstartround="0">
+  <participation>
+    <person id="9223742518" first="Regis" last="Borssato" middle="" country="BR" />
+    <person id="4107286895" first="Bruno" last="Vianna" middle=" " country="BR" />
+    <person id="3107267681" first="Rodrigo" last="Sousa" middle="" country="BR" />
+    <person id="3107353300" first="Petrus" last="Maciel" middle="" country="BR" />
+    <person id="6103799758" first="Rafael" last="Obrusnik" middle="" country="BR" />
+    <person id="39521211" first="Renato" last="Pinto" middle="" country="BR" />
+    <person id="5107375992" first="Luis Felipe" last="Nicolette" middle=" " country="BR" />
+    <person id="4103707795" first="João Antonio" last="Bonini" middle="" country="BR" />
+    <team id="5399" name="Maciel, Petrus" status="4" eliminationround="3">
+      <member position="A" person="3107353300" />
+    </team>
+    <team id="5401" name="Sousa, Rodrigo" status="4" eliminationround="1">
+      <member position="A" person="3107267681" />
+    </team>
+    <team id="5402" name="Obrusnik, Rafael" status="4" eliminationround="2">
+      <member position="A" person="6103799758" />
+    </team>
+    <team id="5403" name="Vianna, Bruno" status="4" eliminationround="2">
+      <member position="A" person="4107286895" />
+    </team>
+    <team id="5404" name="Borssato, Regis" status="4" eliminationround="1">
+      <member position="A" person="9223742518" />
+    </team>
+    <team id="5405" name="Pinto, Renato" status="4" eliminationround="1">
+      <member position="A" person="39521211" />
+    </team>
+    <team id="5406" name="Nicolette, Luis Felipe" status="2" eliminationround="0">
+      <member position="A" person="5107375992" />
+    </team>
+    <team id="5407" name="Bonini, João Antonio" status="4" eliminationround="1">
+      <member position="A" person="4103707795" />
+    </team>
+    <role cd="PL" type="PA">
+      <ref person="5107375992" seq="1" />
+      <ref person="3107353300" seq="2" />
+      <ref person="6103799758" seq="3" />
+      <ref person="4107286895" seq="4" />
+      <ref person="4103707795" seq="5" />
+      <ref person="3107267681" seq="6" />
+      <ref person="9223742518" seq="7" />
+      <ref person="39521211" seq="8" />
+    </role>
+    <role cd="PL" type="DQ" />
+    <role cd="JG" type="PA" />
+  </participation>
+  <matches>
+    <round number="1" gamecd="6" date="2015-11-20T19:24:04" teamformat="false">
+      <match person="4107286895" opponent="9223742518" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="3107353300" opponent="3107267681" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="6103799758" opponent="39521211" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="5107375992" opponent="4103707795" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="2" gamecd="6" date="2015-11-20T21:10:53" teamformat="false">
+      <match person="3107353300" opponent="4107286895" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="5107375992" opponent="6103799758" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="3" gamecd="6" date="2015-11-20T21:11:02" teamformat="false">
+      <match person="5107375992" opponent="3107353300" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+  </matches>
+  <seats />
+  <pods>
+    <podround>
+      <round number="1" />
+      <round number="2" />
+      <round number="3" />
+    </podround>
+  </pods>
+  <log>
+    <entry date="2015-11-20T18:38:54" operation="CRE">4.2.3.4</entry>
+    <entry date="2015-11-20T19:24:04" operation="ROUND">Round Started 1</entry>
+    <entry date="2015-11-20T19:24:21" operation="MATCH">Matches created using match algorithm for round 1.</entry>
+    <entry date="2015-11-20T21:10:53" operation="ROUND">Round Started 2</entry>
+    <entry date="2015-11-20T21:10:54" operation="MATCH">Matches created using match algorithm for round 2.</entry>
+    <entry date="2015-11-20T21:11:02" operation="ROUND">Round Started 3</entry>
+    <entry date="2015-11-20T21:11:04" operation="MATCH">Matches created using match algorithm for round 3.</entry>
+    <entry date="2015-11-20T22:12:38" operation="COM">Tournament Completed</entry>
+    <entry date="2015-11-20T22:12:40" operation="UPL">Results being uploaded.</entry>
+  </log>
+</event>

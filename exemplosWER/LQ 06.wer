@@ -1,0 +1,82 @@
+<event sanctionnumber="15-11-7423347" eventguid="fa5d8999-5e01-41c8-b288-f552366b9126" eventtypeid="133" orgname="UG Cardshop" gamecd="6" coordinator="18737483" startdate="2015-11-20" postevententry="false" enddate="2015-11-20T19:32:14" format="6" eliminationType="4" iscasualreportonly="False" title="Magic 2015/11/20" isstarted="True" status="8" batchid="" isplayoff="False" manualmatchround="0" notes="" numberofrounds="-1" playoffstartround="0">
+  <participation>
+    <person id="1200443861" first="Omar Kiyoshi" last="Guesoju" middle="" country="BR" />
+    <person id="6208462612" first="Josejane" last="Fagundes" middle="" country="BR" />
+    <person id="4107286895" first="Bruno" last="Vianna" middle=" " country="BR" />
+    <person id="1202896674" first="Alvaro" last="Faria" middle="" country="BR" />
+    <person id="3107353300" first="Petrus" last="Maciel" middle="" country="BR" />
+    <person id="82246662" first="Raphael" last="Coqueiro" middle="" country="BR" />
+    <person id="4103707795" first="João Antonio" last="Bonini" middle="" country="BR" />
+    <person id="5208332657" first="Nitay" last="Souza" middle="" country="BR" />
+    <team id="5372" name="Coqueiro, Raphael" status="4" eliminationround="3">
+      <member position="A" person="82246662" />
+    </team>
+    <team id="5373" name="Bonini, João Antonio" status="4" eliminationround="2">
+      <member position="A" person="4103707795" />
+    </team>
+    <team id="5374" name="Vianna, Bruno" status="4" eliminationround="2">
+      <member position="A" person="4107286895" />
+    </team>
+    <team id="5377" name="Faria, Alvaro" status="4" eliminationround="1">
+      <member position="A" person="1202896674" />
+    </team>
+    <team id="5380" name="Fagundes, Josejane" status="2" eliminationround="0">
+      <member position="A" person="6208462612" />
+    </team>
+    <team id="5381" name="Maciel, Petrus" status="4" eliminationround="1">
+      <member position="A" person="3107353300" />
+    </team>
+    <team id="5382" name="Guesoju, Omar Kiyoshi" status="4" eliminationround="1">
+      <member position="A" person="1200443861" />
+    </team>
+    <team id="5383" name="Souza, Nitay" status="4" eliminationround="1">
+      <member position="A" person="5208332657" />
+    </team>
+    <role cd="PL" type="PA">
+      <ref person="6208462612" seq="1" />
+      <ref person="82246662" seq="2" />
+      <ref person="4107286895" seq="3" />
+      <ref person="4103707795" seq="4" />
+      <ref person="1200443861" seq="5" />
+      <ref person="3107353300" seq="6" />
+      <ref person="5208332657" seq="7" />
+      <ref person="1202896674" seq="8" />
+    </role>
+    <role cd="PL" type="DQ" />
+    <role cd="JG" type="PA" />
+  </participation>
+  <matches>
+    <round number="1" gamecd="6" date="2015-11-20T17:41:17" teamformat="false">
+      <match person="6208462612" opponent="1200443861" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="4107286895" opponent="1202896674" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="82246662" opponent="3107353300" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="4103707795" opponent="5208332657" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="2" gamecd="6" date="2015-11-20T19:31:41" teamformat="false">
+      <match person="6208462612" opponent="4107286895" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="82246662" opponent="4103707795" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="3" gamecd="6" date="2015-11-20T19:31:53" teamformat="false">
+      <match person="6208462612" opponent="82246662" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+  </matches>
+  <seats />
+  <pods>
+    <podround>
+      <round number="1" />
+      <round number="2" />
+      <round number="3" />
+    </podround>
+  </pods>
+  <log>
+    <entry date="2015-11-20T17:13:48" operation="CRE">4.2.3.4</entry>
+    <entry date="2015-11-20T17:41:17" operation="ROUND">Round Started 1</entry>
+    <entry date="2015-11-20T17:41:30" operation="MATCH">Matches created using match algorithm for round 1.</entry>
+    <entry date="2015-11-20T19:31:41" operation="ROUND">Round Started 2</entry>
+    <entry date="2015-11-20T19:31:43" operation="MATCH">Matches created using match algorithm for round 2.</entry>
+    <entry date="2015-11-20T19:31:53" operation="ROUND">Round Started 3</entry>
+    <entry date="2015-11-20T19:31:56" operation="MATCH">Matches created using match algorithm for round 3.</entry>
+    <entry date="2015-11-20T19:32:14" operation="COM">Tournament Completed</entry>
+    <entry date="2015-11-20T19:32:17" operation="UPL">Results being uploaded.</entry>
+  </log>
+</event>

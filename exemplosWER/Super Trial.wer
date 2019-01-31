@@ -1,0 +1,168 @@
+<event sanctionnumber="15-11-7423128" eventguid="11d8db88-2599-433c-8db6-c6383c6456f2" eventtypeid="133" orgname="UG Cardshop" gamecd="6" coordinator="18737483" startdate="2015-11-20" postevententry="false" enddate="2015-11-20T22:09:37" format="6" eliminationType="3" iscasualreportonly="False" title="Magic 2015/11/20" isstarted="True" status="8" batchid="" isplayoff="False" manualmatchround="0" notes="15-11-7423128" numberofrounds="5" playoffstartround="0">
+  <participation>
+    <person id="6103425088" first="Felipe" last="Martinez" middle="" country="BR" />
+    <person id="8214081975" first="Guilherme" last="Figueira" middle="" country="BR" />
+    <person id="2208315572" first="Diogo" last="Mignon" middle="" country="BR" />
+    <person id="6103427022" first="Matheus" last="Alves" middle="" country="BR" />
+    <person id="1201084392" first="Bruno" last="Lopez" middle="" country="BR" />
+    <person id="8107580285" first="Bruno" last="Lorenzato" middle="" country="BR" />
+    <person id="1223764420" first="Christian Eduardo" last="Balbino" middle="" country="BR" />
+    <person id="6213989985" first="Eric" last="Tortoza" middle="S" country="BR" />
+    <person id="72247160" first="Bruno" last="Santos" middle="" country="BR" />
+    <person id="7110865515" first="Raul" last="Pesenti" middle=" " country="BR" />
+    <person id="6300477647" first="Régis" last="Schiavon" middle="" country="BR" />
+    <person id="3209545590" first="Eder" last="Araujo De Carvalho" middle="" country="BR" />
+    <person id="3107353399" first="Felipe" last="Parada" middle="" country="BR" />
+    <person id="189011" first="Jonathan" last="Melamed" middle="" country="BR" />
+    <person id="7110865476" first="Kaue" last="Janeiro" middle=" " country="BR" />
+    <person id="4103710942" first="Marcelo" last="Salles" middle="" country="BR" />
+    <person id="9107309664" first="Caue" last="Alvarez" middle="R" country="BR" />
+    <team id="5353" name="Schiavon, Régis" status="2" eliminationround="0">
+      <member position="A" person="6300477647" />
+    </team>
+    <team id="5354" name="Figueira, Guilherme" status="3" eliminationround="2">
+      <member position="A" person="8214081975" />
+    </team>
+    <team id="5355" name="Janeiro, Kaue" status="2" eliminationround="0">
+      <member position="A" person="7110865476" />
+    </team>
+    <team id="5356" name="Pesenti, Raul" status="2" eliminationround="0">
+      <member position="A" person="7110865515" />
+    </team>
+    <team id="5358" name="Parada, Felipe" status="2" eliminationround="0">
+      <member position="A" person="3107353399" />
+    </team>
+    <team id="5359" name="Martinez, Felipe" status="2" eliminationround="0">
+      <member position="A" person="6103425088" />
+    </team>
+    <team id="5362" name="Tortoza, Eric" status="2" eliminationround="0">
+      <member position="A" person="6213989985" />
+    </team>
+    <team id="5363" name="Lorenzato, Bruno" status="2" eliminationround="0">
+      <member position="A" person="8107580285" />
+    </team>
+    <team id="5365" name="Santos, Bruno" status="3" eliminationround="3">
+      <member position="A" person="72247160" />
+    </team>
+    <team id="5366" name="Balbino, Christian Eduardo" status="3" eliminationround="3">
+      <member position="A" person="1223764420" />
+    </team>
+    <team id="5367" name="Mignon, Diogo" status="2" eliminationround="0">
+      <member position="A" person="2208315572" />
+    </team>
+    <team id="5368" name="Melamed, Jonathan" status="2" eliminationround="0">
+      <member position="A" person="189011" />
+    </team>
+    <team id="5371" name="Lopez, Bruno" status="2" eliminationround="0">
+      <member position="A" person="1201084392" />
+    </team>
+    <team id="5375" name="Araujo De Carvalho, Eder" status="3" eliminationround="2">
+      <member position="A" person="3209545590" />
+    </team>
+    <team id="5376" name="Salles, Marcelo" status="2" eliminationround="0">
+      <member position="A" person="4103710942" />
+    </team>
+    <team id="5378" name="Alves, Matheus" status="3" eliminationround="2">
+      <member position="A" person="6103427022" />
+    </team>
+    <team id="5379" name="Alvarez, Caue" status="2" eliminationround="0">
+      <member position="A" person="9107309664" />
+    </team>
+    <role cd="PL" type="PA">
+      <ref person="189011" seq="1" />
+      <ref person="1201084392" seq="2" />
+      <ref person="2208315572" seq="3" />
+      <ref person="6300477647" seq="4" />
+      <ref person="6103425088" seq="5" />
+      <ref person="9107309664" seq="6" />
+      <ref person="6213989985" seq="7" />
+      <ref person="3107353399" seq="8" />
+      <ref person="7110865476" seq="9" />
+      <ref person="8107580285" seq="10" />
+      <ref person="4103710942" seq="11" />
+      <ref person="1223764420" seq="12" />
+      <ref person="7110865515" seq="13" />
+      <ref person="3209545590" seq="14" />
+      <ref person="8214081975" seq="15" />
+      <ref person="6103427022" seq="16" />
+      <ref person="72247160" seq="17" />
+    </role>
+    <role cd="PL" type="DQ" />
+    <role cd="JG" type="PA" />
+  </participation>
+  <matches>
+    <round number="1" gamecd="6" date="2015-11-20T17:21:24" teamformat="false">
+      <match person="6103425088" outcome="3" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="2208315572" opponent="8214081975" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1201084392" opponent="6103427022" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="8107580285" opponent="1223764420" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="6213989985" opponent="72247160" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="7110865515" opponent="6300477647" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="3107353399" opponent="3209545590" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="189011" opponent="7110865476" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="9107309664" opponent="4103710942" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="2" gamecd="6" date="2015-11-20T18:29:25" teamformat="false">
+      <match person="1223764420" outcome="3" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="6103425088" opponent="3107353399" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="9107309664" opponent="7110865515" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="2208315572" opponent="8107580285" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="1201084392" opponent="6213989985" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="189011" opponent="8214081975" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="3209545590" opponent="7110865476" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="4103710942" opponent="6103427022" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="6300477647" opponent="72247160" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+    </round>
+    <round number="3" gamecd="6" date="2015-11-20T19:26:37" teamformat="false">
+      <match person="189011" opponent="2208315572" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="6103425088" opponent="9107309664" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1201084392" opponent="8107580285" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="6300477647" opponent="1223764420" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="4103710942" opponent="7110865515" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="6213989985" opponent="3107353399" outcome="2" win="1" loss="1" draw="0" winbydrop="False" />
+      <match person="7110865476" opponent="72247160" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="4" gamecd="6" date="2015-11-20T20:30:20" teamformat="false">
+      <match person="189011" opponent="6103425088" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1201084392" opponent="9107309664" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="2208315572" opponent="4103710942" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="6300477647" opponent="3107353399" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="6213989985" opponent="8107580285" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="7110865476" opponent="7110865515" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="5" gamecd="6" date="2015-11-20T21:15:00" teamformat="false">
+      <match person="189011" opponent="1201084392" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="2208315572" opponent="6103425088" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="6300477647" opponent="6213989985" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="9107309664" opponent="7110865476" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="3107353399" opponent="4103710942" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="8107580285" opponent="7110865515" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+  </matches>
+  <seats />
+  <pods>
+    <podround>
+      <round number="1" />
+      <round number="2" />
+      <round number="3" />
+      <round number="4" />
+      <round number="5" />
+    </podround>
+  </pods>
+  <log>
+    <entry date="2015-11-20T16:24:26" operation="CRE">4.2.3.4</entry>
+    <entry date="2015-11-20T17:21:24" operation="ROUND">Round Started 1</entry>
+    <entry date="2015-11-20T17:22:56" operation="MATCH">Matches created using match algorithm for round 1.</entry>
+    <entry date="2015-11-20T17:33:52" operation="MATCH">Matches created using match algorithm for round 1.</entry>
+    <entry date="2015-11-20T18:29:25" operation="ROUND">Round Started 2</entry>
+    <entry date="2015-11-20T18:29:27" operation="MATCH">Matches created using match algorithm for round 2.</entry>
+    <entry date="2015-11-20T19:26:37" operation="ROUND">Round Started 3</entry>
+    <entry date="2015-11-20T19:26:44" operation="MATCH">Matches created using match algorithm for round 3.</entry>
+    <entry date="2015-11-20T20:30:20" operation="ROUND">Round Started 4</entry>
+    <entry date="2015-11-20T20:30:24" operation="MATCH">Matches created using match algorithm for round 4.</entry>
+    <entry date="2015-11-20T21:15:00" operation="ROUND">Round Started 5</entry>
+    <entry date="2015-11-20T21:15:04" operation="MATCH">Matches created using match algorithm for round 5.</entry>
+    <entry date="2015-11-20T22:09:37" operation="COM">Tournament Completed</entry>
+    <entry date="2015-11-20T22:09:41" operation="UPL">Results being uploaded.</entry>
+  </log>
+</event>

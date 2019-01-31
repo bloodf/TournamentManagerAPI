@@ -1,0 +1,96 @@
+<event sanctionnumber="15-11-7421976" eventguid="9ed37243-f634-450c-85fa-50084ccaa717" eventtypeid="133" orgname="UG Cardshop" gamecd="6" coordinator="18737483" startdate="2015-11-20" postevententry="false" enddate="2015-11-20T17:17:44" format="6" eliminationType="4" iscasualreportonly="False" title="Magic 2015/11/20" isstarted="True" status="8" batchid="" isplayoff="False" manualmatchround="2" notes="" numberofrounds="-1" playoffstartround="0">
+  <participation>
+    <person id="130671" first="Julio Cesar" last="Buttler" middle="C" country="BR" />
+    <person id="1202896674" first="Alvaro" last="Faria" middle="" country="BR" />
+    <person id="4107286895" first="Bruno" last="Vianna" middle=" " country="BR" />
+    <person id="3110790842" first="Massimo" last="Perinotto" middle=" " country="BR" />
+    <person id="5107375992" first="Luis Felipe" last="Nicolette" middle=" " country="BR" />
+    <person id="1201080259" first="Igor" last="Sousa" middle="V" country="BR" />
+    <person id="6103425088" first="Felipe" last="Martinez" middle="" country="BR" />
+    <person id="3107353399" first="Felipe" last="Parada" middle="" country="BR" />
+    <person id="1203215407" first="Julien" last="Metzger" middle="" country="FR" />
+    <team id="5230" name="Parada, Felipe" status="4" eliminationround="1">
+      <member position="A" person="3107353399" />
+    </team>
+    <team id="5231" name="Sousa, Igor" status="4" eliminationround="2">
+      <member position="A" person="1201080259" />
+    </team>
+    <team id="5232" name="Martinez, Felipe" status="4" eliminationround="1">
+      <member position="A" person="6103425088" />
+    </team>
+    <team id="5234" name="Buttler, Julio Cesar" status="4" eliminationround="2">
+      <member position="A" person="130671" />
+    </team>
+    <team id="5239" name="Perinotto, Massimo" status="2" eliminationround="0">
+      <member position="A" person="3110790842" />
+    </team>
+    <team id="5240" name="Vianna, Bruno" status="4" eliminationround="1">
+      <member position="A" person="4107286895" />
+    </team>
+    <team id="5241" name="Nicolette, Luis Felipe" status="4" eliminationround="1">
+      <member position="A" person="5107375992" />
+    </team>
+    <team id="5242" name="Faria, Alvaro" status="4" eliminationround="4">
+      <member position="A" person="1202896674" />
+    </team>
+    <team id="5243" name="Metzger, Julien" status="4" eliminationround="3">
+      <member position="A" person="1203215407" />
+    </team>
+    <role cd="PL" type="PA">
+      <ref person="3110790842" seq="1" />
+      <ref person="1202896674" seq="2" />
+      <ref person="1203215407" seq="3" />
+      <ref person="130671" seq="4" />
+      <ref person="1201080259" seq="5" />
+      <ref person="5107375992" seq="6" />
+      <ref person="4107286895" seq="7" />
+      <ref person="3107353399" seq="8" />
+      <ref person="6103425088" seq="9" />
+    </role>
+    <role cd="PL" type="DQ" />
+    <role cd="JG" type="PA" />
+  </participation>
+  <matches>
+    <round number="1" gamecd="6" date="2015-11-20T13:20:27" teamformat="false">
+      <match person="130671" outcome="3" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1202896674" opponent="4107286895" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="3110790842" opponent="5107375992" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1201080259" opponent="6103425088" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1203215407" opponent="3107353399" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="2" gamecd="6" date="2015-11-20T17:16:25" teamformat="false">
+      <match person="1202896674" opponent="130671" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="3110790842" opponent="1201080259" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1203215407" outcome="3" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="3" gamecd="6" date="2015-11-20T17:16:59" teamformat="false">
+      <match person="3110790842" opponent="1203215407" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1202896674" outcome="3" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="4" gamecd="6" date="2015-11-20T17:17:15" teamformat="false">
+      <match person="3110790842" opponent="1202896674" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+  </matches>
+  <seats />
+  <pods>
+    <podround>
+      <round number="1" />
+      <round number="2" />
+      <round number="3" />
+      <round number="4" />
+    </podround>
+  </pods>
+  <log>
+    <entry date="2015-11-20T11:56:03" operation="CRE">4.2.3.4</entry>
+    <entry date="2015-11-20T13:20:27" operation="ROUND">Round Started 1</entry>
+    <entry date="2015-11-20T13:20:36" operation="MATCH">Matches created using match algorithm for round 1.</entry>
+    <entry date="2015-11-20T17:16:25" operation="ROUND">Round Started 2</entry>
+    <entry date="2015-11-20T17:16:37" operation="MATCH">Match Created Manually</entry>
+    <entry date="2015-11-20T17:16:59" operation="ROUND">Round Started 3</entry>
+    <entry date="2015-11-20T17:17:04" operation="MATCH">Match Created Manually</entry>
+    <entry date="2015-11-20T17:17:15" operation="ROUND">Round Started 4</entry>
+    <entry date="2015-11-20T17:17:19" operation="MATCH">Match Created Manually</entry>
+    <entry date="2015-11-20T17:17:44" operation="COM">Tournament Completed</entry>
+    <entry date="2015-11-20T17:17:46" operation="UPL">Results being uploaded.</entry>
+  </log>
+</event>

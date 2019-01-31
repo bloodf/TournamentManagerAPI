@@ -1,0 +1,131 @@
+<event sanctionnumber="14-07-5455270" parentevent="12-11-3855609" eventtypeid="133" orgname="Rush - Jogos e Colecionaveis" gamecd="6" coordinator="1202996842" headjudge="1202997160" startdate="2014-07-26" postevententry="false" enddate="2014-07-26T20:07:46" format="6" eliminationType="3" iscasualreportonly="False" title="Magic - 2014/07/26" isstarted="True" status="8" batchid="" isplayoff="True" manualmatchround="0" notes="" numberofrounds="5" playoffstartround="6">
+  <participation>
+    <person id="7209379556" first="Douglas" last="Nardoni" middle="" country="BR" />
+    <person id="192437" first="Abner" last="Faria" middle="A" country="BR" />
+    <person id="9102308618" first="Eduardo" last="Silva" middle=" " country="BR" />
+    <person id="1202997160" first="Nelson" last="Pinheiro" middle="" country="BR" />
+    <person id="9102309720" first="Pedro" last="Henrique" middle=" " country="BR" />
+    <person id="7209376376" first="Vinicius" last="Pardal" middle="" country="BR" />
+    <person id="9102309074" first="Rhaua" last="Dias" middle=" " country="BR" />
+    <person id="9210486518" first="Orlando" last="Machado" middle="" country="BR" />
+    <person id="8214083356" first="Marcelo" last="Zorzi" middle=" " country="BR" />
+    <person id="1201061539" first="Alfredo" last="Webber" middle="" country="BR" />
+    <team id="4251" name="Dias, Rhaua" status="4" eliminationround="5">
+      <member position="A" person="9102309074" />
+    </team>
+    <team id="4252" name="Faria, Abner" status="2" eliminationround="0">
+      <member position="A" person="192437" />
+    </team>
+    <team id="4253" name="Henrique, Pedro" status="3" eliminationround="5">
+      <member position="A" person="9102309720" />
+    </team>
+    <team id="4254" name="Machado, Orlando" status="3" eliminationround="5">
+      <member position="A" person="9210486518" />
+    </team>
+    <team id="4255" name="Nardoni, Douglas" status="4" eliminationround="6">
+      <member position="A" person="7209379556" />
+    </team>
+    <team id="4256" name="Pardal, Vinicius" status="4" eliminationround="6">
+      <member position="A" person="7209376376" />
+    </team>
+    <team id="4257" name="Pinheiro, Nelson" status="3" eliminationround="2">
+      <member position="A" person="1202997160" />
+    </team>
+    <team id="4258" name="Silva, Eduardo" status="4" eliminationround="5">
+      <member position="A" person="9102308618" />
+    </team>
+    <team id="4259" name="Zorzi, Marcelo" status="2" eliminationround="0">
+      <member position="A" person="8214083356" />
+    </team>
+    <team id="4260" name="Webber, Alfredo" status="4" eliminationround="5">
+      <member position="A" person="1201061539" />
+    </team>
+    <role cd="PL" type="PA">
+      <ref person="8214083356" seq="1" />
+      <ref person="192437" seq="2" />
+      <ref person="7209379556" seq="3" />
+      <ref person="7209376376" seq="4" />
+      <ref person="9210486518" seq="5" />
+      <ref person="9102309720" seq="6" />
+      <ref person="9102308618" seq="7" />
+      <ref person="9102309074" seq="8" />
+      <ref person="1201061539" seq="9" />
+      <ref person="1202997160" seq="10" />
+    </role>
+    <role cd="PL" type="DQ" />
+    <role cd="JG" type="PA" />
+  </participation>
+  <matches>
+    <round number="1" gamecd="6" date="2014-07-26T14:38:32" teamformat="false">
+      <match person="7209379556" outcome="3" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="192437" opponent="9102308618" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="9102309720" opponent="1202997160" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="7209376376" opponent="9102309074" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="8214083356" opponent="9210486518" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1201061539" outcome="5" win="0" loss="2" draw="0" winbydrop="False" />
+    </round>
+    <round number="2" gamecd="6" date="2014-07-26T15:19:50" teamformat="false">
+      <match person="9102309720" opponent="7209379556" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="192437" opponent="7209376376" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="8214083356" opponent="1201061539" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="9210486518" opponent="9102309074" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="9102308618" opponent="1202997160" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="3" gamecd="6" date="2014-07-26T16:16:06" teamformat="false">
+      <match person="9102309074" outcome="3" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="9102309720" opponent="8214083356" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="7209379556" opponent="192437" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="7209376376" opponent="9102308618" outcome="2" win="1" loss="1" draw="0" winbydrop="False" />
+      <match person="9210486518" opponent="1201061539" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="4" gamecd="6" date="2014-07-26T17:13:07" teamformat="false">
+      <match person="1201061539" outcome="3" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="192437" opponent="9102309720" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="9210486518" opponent="7209379556" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="8214083356" opponent="7209376376" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="9102308618" opponent="9102309074" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="5" gamecd="6" date="2014-07-26T17:52:34" teamformat="false">
+      <match person="7209376376" outcome="3" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="9210486518" opponent="9102309720" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="8214083356" opponent="192437" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="7209379556" opponent="9102308618" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="9102309074" opponent="1201061539" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="6" gamecd="6" date="2014-07-26T18:27:55" teamformat="false">
+      <match person="8214083356" opponent="7209376376" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="192437" opponent="7209379556" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+  </matches>
+  <seats />
+  <pods>
+    <podround>
+      <round number="1" />
+      <round number="2" />
+      <round number="3" />
+      <round number="4" />
+      <round number="5" />
+      <round number="6" />
+    </podround>
+  </pods>
+  <log>
+    <entry date="2014-07-26T14:09:05" operation="CRE">4.1.14.439</entry>
+    <entry date="2014-07-26T14:38:32" operation="ROUND">Round Started 1</entry>
+    <entry date="2014-07-26T14:39:01" operation="MATCH">Matches created using match algorithm for round 1.</entry>
+    <entry date="2014-07-26T15:19:47" operation="MATCH">Match Created Manually</entry>
+    <entry date="2014-07-26T15:19:50" operation="ROUND">Round Started 2</entry>
+    <entry date="2014-07-26T15:19:51" operation="MATCH">Matches created using match algorithm for round 2.</entry>
+    <entry date="2014-07-26T16:16:06" operation="ROUND">Round Started 3</entry>
+    <entry date="2014-07-26T16:16:07" operation="MATCH">Matches created using match algorithm for round 3.</entry>
+    <entry date="2014-07-26T17:13:07" operation="ROUND">Round Started 4</entry>
+    <entry date="2014-07-26T17:13:08" operation="MATCH">Matches created using match algorithm for round 4.</entry>
+    <entry date="2014-07-26T17:52:34" operation="ROUND">Round Started 5</entry>
+    <entry date="2014-07-26T17:53:01" operation="MATCH">Matches created using match algorithm for round 5.</entry>
+    <entry date="2014-07-26T18:27:55" operation="ROUND">Playoff Round Started 6</entry>
+    <entry date="2014-07-26T18:27:56" operation="MATCH">Matches created using match algorithm for round 6.</entry>
+    <entry date="2014-07-26T20:07:18" operation="ROUND">Playoff Round Started 7</entry>
+    <entry date="2014-07-26T20:07:38" operation="ROUND">Round Deleted 7</entry>
+    <entry date="2014-07-26T20:07:46" operation="COM">Tournament Completed</entry>
+    <entry date="2014-07-26T20:07:48" operation="UPL">Results being uploaded.</entry>
+  </log>
+</event>

@@ -1,0 +1,87 @@
+<event sanctionnumber="15-11-7428943" eventguid="1ce6c319-7a7f-4509-ae68-77f8c6208237" eventtypeid="133" orgname="UG Cardshop" gamecd="6" coordinator="18737483" startdate="2015-11-21" postevententry="false" enddate="2015-11-21T20:27:08" format="6" eliminationType="3" iscasualreportonly="False" title="Magic 2015/11/21" isstarted="True" status="8" batchid="" isplayoff="False" manualmatchround="0" notes="" numberofrounds="3" playoffstartround="0">
+  <participation>
+    <person id="2102039815" first="Pedro Henrique" last="Invanicska" middle="" country="BR" />
+    <person id="8102274302" first="Marcelo" last="César" middle="D" country="BR" />
+    <person id="6300477647" first="Régis" last="Schiavon" middle="" country="BR" />
+    <person id="8214082993" first="Generindo" last="Freire" middle="" country="BR" />
+    <person id="3107352732" first="Rodrigo Yukio" last="Kimura" middle=" " country="BR" />
+    <person id="1214110125" first="Felipe" last="Correia" middle="" country="BR" />
+    <person id="8102271302" first="Henrique" last="Marin" middle="" country="BR" />
+    <person id="7107224398" first="Vinicius Thadeu" last="Calegari" middle="V" country="BR" />
+    <team id="5513" name="César, Marcelo" status="2" eliminationround="0">
+      <member position="A" person="8102274302" />
+    </team>
+    <team id="5514" name="Freire, Generindo" status="3" eliminationround="2">
+      <member position="A" person="8214082993" />
+    </team>
+    <team id="5515" name="Marin, Henrique" status="2" eliminationround="0">
+      <member position="A" person="8102271302" />
+    </team>
+    <team id="5516" name="Correia, Felipe" status="2" eliminationround="0">
+      <member position="A" person="1214110125" />
+    </team>
+    <team id="5517" name="Invanicska, Pedro Henrique" status="2" eliminationround="0">
+      <member position="A" person="2102039815" />
+    </team>
+    <team id="5518" name="Kimura, Rodrigo Yukio" status="2" eliminationround="0">
+      <member position="A" person="3107352732" />
+    </team>
+    <team id="5519" name="Schiavon, Régis" status="2" eliminationround="0">
+      <member position="A" person="6300477647" />
+    </team>
+    <team id="5520" name="Calegari, Vinicius Thadeu" status="2" eliminationround="0">
+      <member position="A" person="7107224398" />
+    </team>
+    <role cd="PL" type="PA">
+      <ref person="2102039815" seq="1" />
+      <ref person="6300477647" seq="2" />
+      <ref person="8102274302" seq="3" />
+      <ref person="8102271302" seq="4" />
+      <ref person="7107224398" seq="5" />
+      <ref person="3107352732" seq="6" />
+      <ref person="1214110125" seq="7" />
+      <ref person="8214082993" seq="8" />
+    </role>
+    <role cd="PL" type="DQ" />
+    <role cd="JG" type="PA" />
+  </participation>
+  <matches>
+    <round number="1" gamecd="6" date="2015-11-21T17:17:58" teamformat="false">
+      <match person="2102039815" opponent="8102274302" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="6300477647" opponent="8214082993" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="3107352732" opponent="1214110125" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="8102271302" opponent="7107224398" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+    </round>
+    <round number="2" gamecd="6" date="2015-11-21T18:28:41" teamformat="false">
+      <match person="6300477647" opponent="8102271302" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="2102039815" opponent="3107352732" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="8102274302" opponent="7107224398" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="1214110125" opponent="8214082993" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+    </round>
+    <round number="3" gamecd="6" date="2015-11-21T19:13:41" teamformat="false">
+      <match person="7107224398" outcome="3" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="2102039815" opponent="6300477647" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+      <match person="8102274302" opponent="3107352732" outcome="1" win="2" loss="0" draw="0" winbydrop="False" />
+      <match person="8102271302" opponent="1214110125" outcome="1" win="2" loss="1" draw="0" winbydrop="False" />
+    </round>
+  </matches>
+  <seats />
+  <pods>
+    <podround>
+      <round number="1" />
+      <round number="2" />
+      <round number="3" />
+    </podround>
+  </pods>
+  <log>
+    <entry date="2015-11-21T15:36:24" operation="CRE">4.2.3.4</entry>
+    <entry date="2015-11-21T17:17:58" operation="ROUND">Round Started 1</entry>
+    <entry date="2015-11-21T17:18:02" operation="MATCH">Matches created using match algorithm for round 1.</entry>
+    <entry date="2015-11-21T18:28:41" operation="ROUND">Round Started 2</entry>
+    <entry date="2015-11-21T18:28:43" operation="MATCH">Matches created using match algorithm for round 2.</entry>
+    <entry date="2015-11-21T19:13:41" operation="ROUND">Round Started 3</entry>
+    <entry date="2015-11-21T19:13:44" operation="MATCH">Matches created using match algorithm for round 3.</entry>
+    <entry date="2015-11-21T20:27:08" operation="COM">Tournament Completed</entry>
+    <entry date="2015-11-21T20:27:10" operation="UPL">Results being uploaded.</entry>
+  </log>
+</event>
