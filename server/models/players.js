@@ -29,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
       targetKey: 'id',
       foreignKey: 'opponentId',
     });
+
+    models.players.hasMany(models.seats);
+
+    models.players.hasMany(models.warnings);
   };
   return players;
 };
