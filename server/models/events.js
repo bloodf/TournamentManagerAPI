@@ -38,6 +38,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'eventId',
     });
 
+    models.events.hasMany(models.judges, {
+      as: 'judge',
+    });
+
     models.events.belongsTo(models.tournaments, {
       as: 'tournament',
       targetKey: 'id',
