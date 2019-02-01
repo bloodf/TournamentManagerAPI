@@ -39,6 +39,10 @@ module.exports = (sequelize, DataTypes) => {
       as: 'player',
     });
 
+    models.users.hasMany(models.judges, {
+      as: 'judge',
+    });
+
     models.users.hasMany(models.decks, {
       as: 'deck',
     });
