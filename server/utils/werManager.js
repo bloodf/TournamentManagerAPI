@@ -108,10 +108,10 @@ class WerManager {
     return this._rounds.map(round => round.matches.map(match => ({
       person: match.person,
       opponent: match.opponent,
-      outcome: match.outcome,
-      win: match.win,
-      loss: match.loss,
-      draw: match.draw,
+      outcome: parseInt(match.outcome, 10),
+      win: parseInt(match.win, 10),
+      loss: parseInt(match.loss, 10),
+      draw: parseInt(match.draw, 10),
       winByDrop: match.winbydrop,
     })));
   }

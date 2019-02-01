@@ -62,7 +62,8 @@ async function saveWerOnDB(tournamentId, WerManager) {
 
     await TournamentDB.addEvent(EventDb);
 
-    const TeamPlayersDb = EventDb.teams.map(team => team.members)
+    const TeamPlayersDb = EventDb.teams
+      .map(team => team.members)
       .flat();
 
     await EventDb.addPlayers(TeamPlayersDb);
@@ -88,15 +89,10 @@ async function saveWerOnDB(tournamentId, WerManager) {
               tournamentId: TournamentDB.id,
             };
 
-            const TournamentUsersDB = await tournamentUsers.findOne({
+            await tournamentUsers.findOrCreate({
               where: tournamentUserOptions,
+              defaults: tournamentUserOptions,
             });
-
-            if (TournamentUsersDB) {
-              await TournamentUsersDB.update(tournamentUserOptions);
-            } else {
-              await tournamentUsers.create(tournamentUserOptions);
-            }
           }
         }),
     );
@@ -116,16 +112,9 @@ async function saveWerOnDB(tournamentId, WerManager) {
         return match;
       });
 
-    return await events.findByPk(EventDb.id,
-      {
-        include: [
-          ...WerAssociations.include,
-          {
-            model: players,
-            as: 'players',
-          },
-        ],
-      });
+    return {
+      data: EventDb,
+    };
 
   } catch (error) {
     logger.error(error, 'Failed to save round for event');
