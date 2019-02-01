@@ -126,12 +126,12 @@ class WerManager {
   define(result) {
     this.event = result.$;
     result.participation.forEach((ep) => {
-      if (ep.person) this.players = ep.person;
-      if (ep.team) this.teams = ep.team;
-      if (ep.role) this.roles = ep.role;
+      if (ep.person && typeof ep.person === 'object') this.players = ep.person;
+      if (ep.team && typeof ep.team === 'object') this.teams = ep.team;
+      if (ep.role && typeof ep.role === 'object') this.roles = ep.role;
     });
     result.matches.forEach((mr) => {
-      this.rounds = mr.round;
+      if (typeof mr === 'object') this.rounds = mr.round;
     });
   }
 
