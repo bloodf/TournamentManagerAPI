@@ -10,6 +10,7 @@ class WerManager {
     this._teams = [];
     this._roles = [];
     this._rounds = [];
+    this._warnings = [];
   }
 
   get event() {
@@ -123,16 +124,42 @@ class WerManager {
     }))];
   }
 
+  get warnings() {
+    return this._warnings;
+  }
+
+  set warnings(value) {
+    this._warnings = [...this.warnings, ...value.map(wr => ({
+      code: wr.$.code,
+      judge: wr.$.judge,
+      notes: wr.$.notes,
+      penalty: wr.$.penalty,
+      dci: wr.$.person,
+      round: wr.$.round,
+    }))];
+  }
+
   define(result) {
     this.event = result.$;
-    result.participation.forEach((ep) => {
-      if (ep.person && typeof ep.person === 'object') this.players = ep.person;
-      if (ep.team && typeof ep.team === 'object') this.teams = ep.team;
-      if (ep.role && typeof ep.role === 'object') this.roles = ep.role;
-    });
-    result.matches.forEach((mr) => {
-      if (typeof mr === 'object') this.rounds = mr.round;
-    });
+    if (result.participation) {
+      result.participation.forEach((ep) => {
+        if (ep.person && typeof ep.person === 'object') this.players = ep.person;
+        if (ep.team && typeof ep.team === 'object') this.teams = ep.team;
+        if (ep.role && typeof ep.role === 'object') this.roles = ep.role;
+      });
+    }
+    if (result.matches) {
+      result.matches.forEach((mr) => {
+        if (typeof mr === 'object') this.rounds = mr.round;
+      });
+    }
+    if (result.warnings) {
+      result.warnings.forEach((wr) => {
+        if (Array.isArray(wr.warning)) {
+          this.warnings = wr.warning;
+        }
+      });
+    }
   }
 
   async parse(werData) {

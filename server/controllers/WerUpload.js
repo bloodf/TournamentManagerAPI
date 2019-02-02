@@ -1,5 +1,14 @@
 const {
-  events, players, rounds, matches, teams, tournaments, users, roles, tournamentUsers,
+  events,
+  players,
+  rounds,
+  matches,
+  teams,
+  tournaments,
+  users,
+  roles,
+  tournamentUsers,
+  warnings,
 } = require('../models');
 
 const WerManagerClass = require('../utils/werManager');
@@ -11,6 +20,7 @@ async function saveWerOnDB(tournamentId, WerManager) {
       ...WerManager.event,
       teams: [...WerManager.teams],
       rounds: [...WerManager.rounds],
+      warnings: [...WerManager.warnings],
     };
 
     const WerAssociations = {
@@ -97,7 +107,26 @@ async function saveWerOnDB(tournamentId, WerManager) {
         }),
     );
 
-    // const MatchesDb =
+    WerManager.warnings.forEach(async (warning) => {
+      const Player = TeamPlayersDb.find(p => p.dci === warning.dci);
+      if (Player) {
+        const warningData = {
+          code: warning.code,
+          judge: warning.judge,
+          notes: warning.notes,
+          round: warning.round,
+          penalty: warning.penalty,
+          playerId: Player.id,
+        };
+        const warningDb = await warnings.find(warningData);
+        if (warningDb) {
+          await warnings.update(warningData);
+        } else {
+          await warnings.create(warningData);
+        }
+      }
+    });
+
     EventDb.rounds
       .map(round => round.matches)
       .flat()
