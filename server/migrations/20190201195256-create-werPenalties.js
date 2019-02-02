@@ -1,8 +1,10 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => queryInterface.createTable('penalties', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('werPenalties', {
     penalty: {
       type: Sequelize.INTEGER,
       primaryKey: true,
+      allowNull: false,
+      unique: true,
     },
     name: {
       type: Sequelize.STRING,
@@ -19,5 +21,5 @@ module.exports = {
       type: Sequelize.DATE,
     },
   }),
-  down: queryInterface => queryInterface.dropTable('penalties'),
+  down: queryInterface => queryInterface.dropTable('werPenalties'),
 };

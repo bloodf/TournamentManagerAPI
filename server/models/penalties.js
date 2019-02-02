@@ -1,11 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
-  const penalties = sequelize.define('penalties', {
-    penalty: DataTypes.INTEGER,
+  const penalties = sequelize.define('werPenalties', {
+    penalty: {
+      type: DataTypes.INTEGER,
+      unique: true,
+    },
     name: DataTypes.STRING,
     code: DataTypes.STRING,
   }, {});
-  penalties.associate = (models) => {
-    models.penalties.hasMany(models.warnings);
-  };
   return penalties;
 };

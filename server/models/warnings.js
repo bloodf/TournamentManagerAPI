@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
   warnings.associate = (models) => {
     models.warnings.belongsTo(models.players);
 
-    models.warnings.belongsTo(models.penalties);
+    models.warnings.belongsTo(models.werPenalties, {
+      targetKey: 'penalty',
+      foreignKey: 'penalty',
+    });
   };
   return warnings;
 };
