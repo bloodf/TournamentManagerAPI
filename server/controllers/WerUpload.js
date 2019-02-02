@@ -9,6 +9,7 @@ const {
   roles,
   tournamentUsers,
   warnings,
+  seats,
 } = require('../models');
 
 const WerManagerClass = require('../utils/werManager');
@@ -21,6 +22,7 @@ async function saveWerOnDB(tournamentId, WerManager) {
       teams: [...WerManager.teams],
       rounds: [...WerManager.rounds],
       warnings: [...WerManager.warnings],
+      seats: [...WerManager.seats],
     };
 
     const WerAssociations = {
@@ -102,6 +104,14 @@ async function saveWerOnDB(tournamentId, WerManager) {
             await tournamentUsers.findOrCreate({
               where: tournamentUserOptions,
               defaults: tournamentUserOptions,
+            });
+          }
+          const PlayerSeat = WerData.seats.find(seat => seat.player === player.dci);
+          if (PlayerSeat) {
+            await seats.upsert({
+              table: PlayerSeat.table,
+              seat: PlayerSeat.seat,
+              playerId: player.id,
             });
           }
         }),

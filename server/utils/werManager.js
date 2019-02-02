@@ -11,6 +11,7 @@ class WerManager {
     this._roles = [];
     this._rounds = [];
     this._warnings = [];
+    this._seats = [];
   }
 
   get event() {
@@ -125,7 +126,7 @@ class WerManager {
   }
 
   get warnings() {
-    return this._warnings;
+    return this._warnings.filter(w => Object.keys(w) >= 1);
   }
 
   set warnings(value) {
@@ -137,6 +138,18 @@ class WerManager {
       dci: wr.$.person,
       round: wr.$.round,
     }))];
+  }
+
+  get seats() {
+    return this._seats;
+  }
+
+  set seats(value) {
+    this._seats = [...this.seats, value.map(s => s.seat.map(seat => ({
+      table: parseInt(s.$.number, 10),
+      seat: parseInt(seat.$.number, 10),
+      player: seat.$.player,
+    }))).flat()].flat();
   }
 
   define(result) {
@@ -157,6 +170,13 @@ class WerManager {
       result.warnings.forEach((wr) => {
         if (Array.isArray(wr.warning)) {
           this.warnings = wr.warning;
+        }
+      });
+    }
+    if (result.seats) {
+      result.seats.forEach((s) => {
+        if (Array.isArray(s.table)) {
+          this.seats = s.table;
         }
       });
     }
