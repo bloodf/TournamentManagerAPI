@@ -21,10 +21,25 @@ const Cleaner = {
   },
 };
 
+const HealthCheck = {
+  plugin: require('hapi-and-healthy'),
+  options: {
+    custom: {},
+    env: config.get('app.env'),
+    name: Package.name,
+    test: {
+      node: [],
+      features: [],
+    },
+    version: Package.version,
+  },
+};
+
 const plugins = [
   HapiResponseTime,
   AclPolicies,
   Cleaner,
+  HealthCheck,
 ];
 
 module.exports = plugins;
