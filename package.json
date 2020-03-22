@@ -35,7 +35,7 @@
     "good-console": "^8.0.0",
     "hapi": "18.1.0",
     "hapi-acl-auth": "^1.0.5",
-    "hapi-and-healthy": "^7.0.4",
+    "hapi-and-healthy": "^7.0.6",
     "hapi-cors-headers": "^1.0.3",
     "hapi-jsonwebtoken": "^1.1.0",
     "hapi-response-time": "^2.0.0",
